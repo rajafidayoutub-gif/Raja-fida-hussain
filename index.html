@@ -38,10 +38,6 @@ body{
   overflow-x:hidden;
 }
 
-/* ==============================
-   AMBIENT LIGHT
-============================== */
-
 body::before{
   content:"";
   position:fixed;
@@ -57,9 +53,9 @@ body::before{
   z-index:-1;
 }
 
-/* ==============================
-   OPENING
-============================== */
+/* =========================
+   INTRO
+========================= */
 
 .intro{
   position:fixed;
@@ -95,9 +91,9 @@ body::before{
   100%{transform:scale(1.35);opacity:.3}
 }
 
-/* ==============================
-   ROUND LOGO
-============================== */
+/* =========================
+   LOGO
+========================= */
 
 .logo{
   width:285px;
@@ -124,8 +120,6 @@ body::before{
     transform:scale(1) rotate(0);
   }
 }
-
-/* Round emblem */
 
 .logo-circle{
   position:absolute;
@@ -154,7 +148,7 @@ body::before{
   border:1px solid rgba(212,173,80,.12);
 }
 
-/* Crown is static */
+/* Static crown */
 
 .crown{
   position:absolute;
@@ -165,27 +159,19 @@ body::before{
   filter:drop-shadow(0 0 12px rgba(212,173,80,.5));
 }
 
-/* ==============================
-   ONE-SIDED WIDE SWORD
-============================== */
+/* =========================
+   ANIMATED SINGLE EDGE SWORD
+========================= */
 
 .sword{
   position:absolute;
   width:175px;
   height:22px;
   z-index:4;
-
-  transform:
-    rotate(-42deg)
-    translateX(0);
-
+  transform:rotate(-42deg);
   animation:swordMove 2.8s ease-in-out infinite;
-
-  filter:
-    drop-shadow(0 0 8px rgba(212,173,80,.65));
+  filter:drop-shadow(0 0 8px rgba(212,173,80,.65));
 }
-
-/* Wide blade */
 
 .sword-blade{
   position:absolute;
@@ -202,36 +188,26 @@ body::before{
       #76551b 100%
     );
 
-  clip-path:
-    polygon(
-      0 22%,
-      86% 22%,
-      100% 50%,
-      86% 78%,
-      0 78%,
-      9% 50%
-    );
-
-  border-radius:2px;
+  clip-path:polygon(
+    0 22%,
+    86% 22%,
+    100% 50%,
+    86% 78%,
+    0 78%,
+    9% 50%
+  );
 }
-
-/* Clearly sharpened single edge */
 
 .sword-blade::after{
   content:"";
   position:absolute;
   right:0;
   top:0;
-
   width:90px;
   height:3px;
-
   background:#fff3b8;
-
   box-shadow:0 2px 7px rgba(255,238,168,.7);
 }
-
-/* Handle */
 
 .sword-handle{
   position:absolute;
@@ -243,8 +219,6 @@ body::before{
   border:1px solid var(--gold);
   border-radius:5px;
 }
-
-/* Guard */
 
 .sword-handle::after{
   content:"";
@@ -263,7 +237,6 @@ body::before{
     transform:rotate(-42deg) translateX(-12px);
     opacity:.72;
   }
-
   50%{
     transform:rotate(-42deg) translateX(20px);
     opacity:1;
@@ -308,9 +281,9 @@ body::before{
   50%{background-position:100% 50%}
 }
 
-/* ==============================
+/* =========================
    NAVIGATION
-============================== */
+========================= */
 
 .nav{
   position:fixed;
@@ -372,21 +345,17 @@ body::before{
   font-size:9px;
 }
 
-/* ==============================
+/* =========================
    HERO
-============================== */
+========================= */
 
 .hero{
   min-height:100vh;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   text-align:center;
-
   padding:150px 20px 90px;
-
   position:relative;
 }
 
@@ -415,7 +384,6 @@ body::before{
     opacity:0;
     transform:translateY(35px);
   }
-
   to{
     opacity:1;
     transform:translateY(0);
@@ -435,7 +403,6 @@ body::before{
   font-weight:500;
   letter-spacing:clamp(2px,1vw,8px);
   line-height:1;
-
   color:transparent;
 
   background:
@@ -449,7 +416,6 @@ body::before{
     );
 
   background-size:250% auto;
-
   -webkit-background-clip:text;
   background-clip:text;
 
@@ -525,9 +491,9 @@ body::before{
   transform:translateY(-5px);
 }
 
-/* ==============================
-   GENERAL SECTIONS
-============================== */
+/* =========================
+   SECTIONS
+========================= */
 
 .section{
   width:92%;
@@ -560,9 +526,9 @@ body::before{
   font-size:14px;
 }
 
-/* ==============================
+/* =========================
    ABOUT
-============================== */
+========================= */
 
 .about{
   display:grid;
@@ -625,82 +591,9 @@ body::before{
   margin-bottom:18px;
 }
 
-/* ==============================
-   THREE MAIN DESTINATIONS
-============================== */
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
-}
-
-.card{
-  min-height:250px;
-  padding:30px;
-  border:1px solid var(--border);
-  border-radius:27px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.035),
-      rgba(255,255,255,.008)
-    );
-
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-
-  transition:.4s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  border-color:rgba(212,173,80,.45);
-  box-shadow:0 25px 60px rgba(0,0,0,.4);
-}
-
-.card-icon{
-  color:var(--gold-light);
-  font-size:26px;
-  margin-bottom:18px;
-}
-
-.card h3{
-  font-family:"Cinzel",Georgia,serif;
-  font-weight:500;
-  font-size:21px;
-  margin-bottom:10px;
-}
-
-.card p{
-  color:#77726a;
-  font-size:12px;
-  line-height:1.9;
-  margin-bottom:22px;
-}
-
-.small-btn{
-  width:max-content;
-  padding:10px 15px;
-  border:1px solid rgba(212,173,80,.27);
-  border-radius:30px;
-  color:#bcb4a5;
-  text-decoration:none;
-  font-size:8px;
-  letter-spacing:1px;
-  transition:.3s;
-}
-
-.small-btn:hover{
-  color:var(--gold-light);
-  border-color:var(--gold);
-}
-
-/* ==============================
-   RAJA FEATURE
-============================== */
+/* =========================
+   RAJA DESTINATION
+========================= */
 
 .raja-box{
   text-align:center;
@@ -734,9 +627,9 @@ body::before{
   line-height:2;
 }
 
-/* ==============================
+/* =========================
    SERVICES
-============================== */
+========================= */
 
 .service-grid{
   display:grid;
@@ -776,9 +669,9 @@ body::before{
   line-height:1.9;
 }
 
-/* ==============================
+/* =========================
    COLLABORATION
-============================== */
+========================= */
 
 .collab{
   text-align:center;
@@ -813,9 +706,9 @@ body::before{
   line-height:2;
 }
 
-/* ==============================
+/* =========================
    SOCIAL
-============================== */
+========================= */
 
 .social{
   display:flex;
@@ -841,9 +734,9 @@ body::before{
   transform:translateY(-3px);
 }
 
-/* ==============================
+/* =========================
    CONTACT
-============================== */
+========================= */
 
 .contact{
   text-align:center;
@@ -868,9 +761,9 @@ body::before{
   line-height:2;
 }
 
-/* ==============================
+/* =========================
    FOOTER
-============================== */
+========================= */
 
 footer{
   padding:60px 20px;
@@ -892,9 +785,9 @@ footer p{
   line-height:2;
 }
 
-/* ==============================
+/* =========================
    MOBILE
-============================== */
+========================= */
 
 @media(max-width:850px){
 
@@ -906,7 +799,6 @@ footer p{
     grid-template-columns:1fr;
   }
 
-  .cards,
   .service-grid{
     grid-template-columns:1fr 1fr;
   }
@@ -932,7 +824,6 @@ footer p{
     padding-top:125px;
   }
 
-  .cards,
   .service-grid{
     grid-template-columns:1fr;
   }
@@ -958,9 +849,9 @@ footer p{
 
 <body>
 
-<!-- ==========================================
+<!-- =========================
      OPENING LOGO
-=========================================== -->
+========================= -->
 
 <div class="intro">
 
@@ -973,16 +864,13 @@ footer p{
     <!-- STATIC CROWN -->
     <div class="crown">♛</div>
 
-    <!-- SINGLE, WIDE, SHARP SWORD -->
+    <!-- ANIMATED SINGLE EDGE SWORD -->
     <div class="sword">
-
       <div class="sword-handle"></div>
-
       <div class="sword-blade"></div>
-
     </div>
 
-    <!-- ONLY RAJA -->
+    <!-- RAJA ONLY -->
     <div class="urdu-logo">
       راجا
     </div>
@@ -992,9 +880,9 @@ footer p{
 </div>
 
 
-<!-- ==========================================
+<!-- =========================
      NAVIGATION
-=========================================== -->
+========================= -->
 
 <nav class="nav">
 
@@ -1027,9 +915,9 @@ footer p{
 </nav>
 
 
-<!-- ==========================================
+<!-- =========================
      HERO
-=========================================== -->
+========================= -->
 
 <section class="hero">
 
@@ -1062,8 +950,8 @@ footer p{
         DISCOVER MY STORY
       </a>
 
-      <a href="#explore" class="btn btn-outline">
-        EXPLORE RAJA
+      <a href="collection.html" class="btn btn-outline">
+        EXPLORE COLLECTION
       </a>
 
     </div>
@@ -1073,9 +961,9 @@ footer p{
 </section>
 
 
-<!-- ==========================================
+<!-- =========================
      ABOUT
-=========================================== -->
+========================= -->
 
 <section class="section" id="about">
 
@@ -1123,8 +1011,8 @@ footer p{
         identity.
       </p>
 
-      <a href="#explore" class="btn btn-outline">
-        EXPLORE THE VISION
+      <a href="collection.html" class="btn btn-outline">
+        EXPLORE RAJA
       </a>
 
     </div>
@@ -1134,9 +1022,9 @@ footer p{
 </section>
 
 
-<!-- ==========================================
+<!-- =========================
      EXPLORE RAJA
-=========================================== -->
+========================= -->
 
 <section class="section" id="explore">
 
@@ -1166,16 +1054,14 @@ footer p{
 
     <div class="buttons">
 
-      <!-- Later this will connect to raja.html -->
-
-      <a href="#" class="btn btn-gold"
-         onclick="comingSoon(event)">
+      <!-- REAL COLLECTION PAGE -->
+      <a href="collection.html" class="btn btn-gold">
         EXPLORE COLLECTION
       </a>
 
-      <a href="#" class="btn btn-outline"
-         onclick="comingSoon(event)">
-        PREMIUM COLLECTION
+      <!-- REAL VERIFICATION PAGE -->
+      <a href="verification.html" class="btn btn-outline">
+        AUTHENTICITY VERIFICATION
       </a>
 
     </div>
@@ -1185,9 +1071,9 @@ footer p{
 </section>
 
 
-<!-- ==========================================
+<!-- =========================
      SERVICES
-=========================================== -->
+========================= -->
 
 <section class="section" id="services">
 
@@ -1265,9 +1151,9 @@ footer p{
 </section>
 
 
-<!-- ==========================================
-     COLLABORATE
-=========================================== -->
+<!-- =========================
+     COLLABORATION
+========================= -->
 
 <section class="section" id="collaborate">
 
@@ -1287,7 +1173,10 @@ footer p{
       promotions and creative projects.
     </p>
 
-    <a href="#contact" class="btn btn-gold">
+    <!-- EMAIL -->
+    <a
+      href="mailto:fidahussainraja786@icloud.com?subject=Collaboration%20Enquiry"
+      class="btn btn-gold">
       WORK WITH RAJA
     </a>
 
@@ -1296,9 +1185,9 @@ footer p{
 </section>
 
 
-<!-- ==========================================
+<!-- =========================
      SOCIAL MEDIA
-=========================================== -->
+========================= -->
 
 <section class="section" id="social">
 
@@ -1317,28 +1206,39 @@ footer p{
 
   <div class="social">
 
-    <a href="https://www.tiktok.com/@rajafida77"
-       target="_blank">
+    <a
+      href="https://www.tiktok.com/@rajafida77"
+      target="_blank"
+      rel="noopener">
       TIKTOK
     </a>
 
-    <a href="https://www.instagram.com/fidahussain778866"
-       target="_blank">
+    <a
+      href="https://www.instagram.com/fidahussain778866"
+      target="_blank"
+      rel="noopener">
       INSTAGRAM
     </a>
 
-    <a href="https://www.facebook.com/share/14k19iyM5fv/?mibextid=wwXIfr"
-       target="_blank">
+    <a
+      href="https://www.facebook.com/share/14k19iyM5fv/?mibextid=wwXIfr"
+      target="_blank"
+      rel="noopener">
       FACEBOOK
     </a>
 
-    <a href="https://youtube.com/@rajafida-v7n"
-       target="_blank">
+    <a
+      href="https://youtube.com/@rajafida-v7n"
+      target="_blank"
+      rel="noopener">
       YOUTUBE
     </a>
 
-    <a href="https://whatsapp.com/channel/0029Vb8XD7y90x34UmoKRv0T"
-       target="_blank">
+    <!-- DIRECT WHATSAPP -->
+    <a
+      href="https://wa.me/qr/XQHTPGQ5MKCKH1"
+      target="_blank"
+      rel="noopener">
       WHATSAPP
     </a>
 
@@ -1347,9 +1247,9 @@ footer p{
 </section>
 
 
-<!-- ==========================================
+<!-- =========================
      CONTACT
-=========================================== -->
+========================= -->
 
 <section class="contact" id="contact">
 
@@ -1366,17 +1266,32 @@ footer p{
     marketing opportunities or general enquiries.
   </p>
 
-  <a href="mailto:contact@rajafida.com"
-     class="btn btn-gold">
-    CONTACT RAJA FIDA HUSSAIN
-  </a>
+  <div class="buttons">
+
+    <!-- EMAIL -->
+    <a
+      href="mailto:fidahussainraja786@icloud.com"
+      class="btn btn-gold">
+      SEND EMAIL
+    </a>
+
+    <!-- WHATSAPP -->
+    <a
+      href="https://wa.me/qr/XQHTPGQ5MKCKH1"
+      target="_blank"
+      rel="noopener"
+      class="btn btn-outline">
+      CHAT ON WHATSAPP
+    </a>
+
+  </div>
 
 </section>
 
 
-<!-- ==========================================
+<!-- =========================
      FOOTER
-=========================================== -->
+========================= -->
 
 <footer>
 
@@ -1399,23 +1314,6 @@ footer p{
   </p>
 
 </footer>
-
-
-<script>
-
-/* Temporary buttons until the separate pages are created */
-
-function comingSoon(event){
-
-  event.preventDefault();
-
-  alert(
-    "The RAJA collection page is coming next."
-  );
-
-}
-
-</script>
 
 </body>
 </html>
