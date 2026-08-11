@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RajaFida | Authenticity</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:#030303;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#d4af37;
+    filter:blur(170px);
+    opacity:.08;
+    top:-250px;
+    left:-200px;
+}
+
+.card{
+    width:100%;
+    max-width:650px;
+    padding:55px 35px;
+    text-align:center;
+    border:1px solid rgba(212,175,55,.3);
+    border-radius:30px;
+    background:rgba(255,255,255,.035);
+    backdrop-filter:blur(20px);
+    position:relative;
+    box-shadow:0 0 80px rgba(212,175,55,.06);
+}
+
+.logo{
+    direction:ltr;
+    color:#d4af37;
+    font-size:22px;
+    letter-spacing:6px;
+    margin-bottom:35px;
+}
+
+.label{
+    color:#d4af37;
+    font-size:10px;
+    letter-spacing:4px;
+    direction:ltr;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#999;
+    line-height:2;
+    margin-bottom:35px;
+}
+
+.form{
+    direction:ltr;
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+input{
+    flex:1;
+    padding:16px 18px;
+    background:#090909;
+    border:1px solid #333;
+    border-radius:30px;
+    color:#fff;
+    outline:none;
+    text-align:left;
+}
+
+input:focus{
+    border-color:#d4af37;
+}
+
+button{
+    padding:16px 24px;
+    border:1px solid #d4af37;
+    border-radius:30px;
+    background:#d4af37;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#fff;
+}
+
+.result{
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,.25);
+    background:rgba(212,175,55,.05);
+}
+
+.result h2{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.result p{
+    color:#aaa;
+    line-height:2;
+}
+
+.note{
+    margin-top:30px;
+    color:#666;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:12px;
+}
+
+@media(max-width:600px){
+
+    .card{
+        padding:40px 22px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    .form{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">
+RAJAFIDA
+</div>
+
+<div class="label">
+AUTHENTICITY VERIFICATION
+</div>
+
+<h1>
+اصلیت کی تصدیق
+</h1>
+
+<p class="subtitle">
+اپنے محدود خصوصی ایڈیشن کی اصلیت جانچنے کے لیے
+اپنا منفرد شناختی نمبر درج کریں۔
+</p>
+
+<div class="form">
+
+<input
+id="productId"
+type="text"
+placeholder="مثلاً RF-PRE-2026-0001"
+>
+
+<button onclick="verifyProduct()">
+تصدیق کریں
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+<h2>
+اصل تصدیق شدہ ہے
+</h2>
+
+<p>
+یہ شناختی نمبر RajaFida کے محدود خصوصی
+ایڈیشن کے ریکارڈ سے مطابقت رکھتا ہے۔
+</p>
+
+<br>
+
+<p>
+<strong>شناختی نمبر:</strong>
+<span id="verifiedId"></span>
+</p>
+
+<br>
+
+<p>
+یہ تصدیقی صفحہ مستقبل میں اس پیس کی
+ملکیت اور مکمل معلومات دیکھنے کے لیے
+استعمال کیا جا سکے گا۔
+</p>
+
+</div>
+
+<div class="note">
+
+اہم وضاحت: موجودہ مرحلے میں یہ صفحہ
+صرف نمونہ تصدیق دکھاتا ہے۔ حقیقی خریدار،
+ملکیت اور مصنوعات کا محفوظ ریکارڈ رکھنے
+کے لیے بعد میں محفوظ نظام جوڑا جائے گا۔
+
+</div>
+
+<a href="collection.html" class="back">
+مجموعے پر واپس جائیں
+</a>
+
+</div>
+
+
+<script>
+
+function verifyProduct(){
+
+    const id =
+    document.getElementById("productId").value.trim();
+
+    const result =
+    document.getElementById("result");
+
+    const verifiedId =
+    document.getElementById("verifiedId");
+
+    if(id === ""){
+
+        alert("براہِ کرم شناختی نمبر درج کریں۔");
+        return;
+
+    }
+
+    verifiedId.textContent = id;
+
+    result.style.display = "block";
+
+}
+
+</script>
+
+</body>
+
+</html>
