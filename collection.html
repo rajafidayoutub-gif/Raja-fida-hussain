@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RajaFida | Collection</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#030303;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:#d4af37;
+
+    filter:blur(180px);
+
+    opacity:.07;
+
+    top:-250px;
+    left:-200px;
+
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:#8c6915;
+
+    filter:blur(170px);
+
+    opacity:.06;
+
+    right:-200px;
+    bottom:-150px;
+
+    pointer-events:none;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+
+    top:18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:92%;
+    max-width:1250px;
+
+    padding:17px 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(10,10,10,.65);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(212,175,55,.22);
+
+    border-radius:60px;
+
+    z-index:1000;
+}
+
+.logo{
+    color:#d4af37;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    letter-spacing:5px;
+}
+
+.nav-links{
+    display:flex;
+
+    gap:30px;
+}
+
+.nav-links a{
+    color:#aaa;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+    min-height:65vh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:150px 20px 70px;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #2b2109,
+        #080704 35%,
+        #030303 70%
+    );
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border:1px solid rgba(212,175,55,.1);
+
+    border-radius:50%;
+
+    animation:rotate 25s linear infinite;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    animation:heroIn 1.2s ease both;
+}
+
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes rotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.label{
+    color:#d4af37;
+
+    letter-spacing:7px;
+
+    font-size:11px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(50px,10vw,100px);
+
+    letter-spacing:8px;
+
+    color:#d4af37;
+
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:#888;
+
+    font-size:16px;
+}
+
+/* COLLECTION */
+
+.collection{
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:100px 6%;
+}
+
+.section-title{
+    text-align:center;
+
+    font-size:45px;
+
+    margin-bottom:20px;
+}
+
+.section-description{
+    text-align:center;
+
+    max-width:650px;
+
+    margin:0 auto 65px;
+
+    color:#777;
+}
+
+/* PRODUCT */
+
+.product{
+    margin-bottom:100px;
+
+    padding:40px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.015)
+    );
+
+    backdrop-filter:blur(12px);
+
+    animation:productReveal 1s ease both;
+}
+
+@keyframes productReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.product-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    margin-bottom:35px;
+}
+
+.product-header h2{
+    font-size:32px;
+}
+
+.product-header p{
+    color:#777;
+
+    margin-top:7px;
+}
+
+.product-number{
+    color:#555;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+}
+
+/* TIERS */
+
+.tiers{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.tier{
+    position:relative;
+
+    min-height:330px;
+
+    padding:32px;
+
+    border-radius:23px;
+
+    border:1px solid #292929;
+
+    background:#0a0a0a;
+
+    overflow:hidden;
+
+    transition:.5s;
+}
+
+.tier:hover{
+    transform:translateY(-10px);
+}
+
+/* ESSENTIAL */
+
+.essential{
+    border-color:#23452d;
+}
+
+.essential .tier-name{
+    color:#65c47a;
+}
+
+/* STANDARD */
+
+.standard{
+    border-color:#263d57;
+}
+
+.standard .tier-name{
+    color:#69a9e8;
+}
+
+/* PREMIUM */
+
+.premium{
+    border-color:rgba(212,175,55,.5);
+
+    background:
+    radial-gradient(
+        circle at top right,
+        #4a370b,
+        #0a0a0a 60%
+    );
+
+    box-shadow:
+    0 0 50px rgba(212,175,55,.05);
+
+    animation:
+    premiumGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes premiumGlow{
+
+    from{
+        box-shadow:
+        0 0 20px rgba(212,175,55,.04);
+    }
+
+    to{
+        box-shadow:
+        0 0 55px rgba(212,175,55,.14);
+    }
+
+}
+
+.premium .tier-name{
+    color:#d4af37;
+}
+
+/* LIMITED BADGE */
+
+.limited{
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    padding:7px 12px;
+
+    border-radius:30px;
+
+    color:#000;
+
+    background:#d4af37;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    animation:
+    badgePulse 2s infinite;
+}
+
+@keyframes badgePulse{
+
+    0%,100%{
+        box-shadow:
+        0 0 0 rgba(212,175,55,0);
+    }
+
+    50%{
+        box-shadow:
+        0 0 20px rgba(212,175,55,.35);
+    }
+
+}
+
+/* TIER CONTENT */
+
+.tier-number{
+    color:#555;
+
+    font-size:11px;
+
+    margin-bottom:20px;
+}
+
+.tier-name{
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.tier-subtitle{
+    color:#777;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+}
+
+.features{
+    list-style:none;
+
+    margin-bottom:25px;
+}
+
+.features li{
+    color:#999;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+}
+
+.features li::before{
+    content:"✓";
+
+    margin-right:9px;
+
+    color:#d4af37;
+}
+
+.price{
+    font-size:22px;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+.premium .price{
+    color:#d4af37;
+}
+
+/* BUTTON */
+
+.order{
+    display:inline-block;
+
+    padding:12px 23px;
+
+    border:1px solid #555;
+
+    border-radius:30px;
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    transition:.4s;
+}
+
+.order:hover{
+    border-color:#d4af37;
+
+    color:#d4af37;
+}
+
+.premium .order{
+    border-color:#d4af37;
+
+    color:#d4af37;
+}
+
+.premium .order:hover{
+    background:#d4af37;
+
+    color:#000;
+}
+
+/* LIMITED INFORMATION */
+
+.limited-info{
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid rgba(212,175,55,.15);
+
+    color:#777;
+
+    font-size:11px;
+}
+
+.limited-info strong{
+    color:#d4af37;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    padding:70px 20px;
+
+    border-top:1px solid #181818;
+
+    color:#666;
+}
+
+.footer-logo{
+    color:#d4af37;
+
+    font-size:24px;
+
+    letter-spacing:6px;
+
+    margin-bottom:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .tiers{
+        grid-template-columns:1fr;
+    }
+
+    .product{
+        padding:25px;
+    }
+
+    .product-header{
+        display:block;
+    }
+
+    .product-number{
+        margin-top:10px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .nav-links{
+        display:none;
+    }
+
+    nav{
+        width:94%;
+    }
+
+    .collection{
+        padding:70px 5%;
+    }
+
+    .section-title{
+        font-size:35px;
+    }
+
+    .hero h1{
+        letter-spacing:5px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">
+RAJAFIDA
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">
+HOME
+</a>
+
+<a href="#collection">
+COLLECTION
+</a>
+
+<a href="#limited">
+LIMITED EDITION
+</a>
+
+<a href="#contact">
+CONTACT
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="label">
+RAJAFIDA COLLECTION
+</div>
+
+<h1>
+CRAFTED FOR YOU
+</h1>
+
+<p>
+Choose your level of craftsmanship.
+From everyday essentials to
+exclusive limited editions.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- COLLECTION -->
+
+<section class="collection" id="collection">
+
+
+<div class="label">
+THE COLLECTION
+</div>
+
+<h2 class="section-title">
+Three Levels. One Identity.
+</h2>
+
+<p class="section-description">
+
+Every RajaFida product is available
+in three carefully defined levels.
+Choose the one that matches your style,
+needs and ambition.
+
+</p>
+
+
+<!-- PRODUCT 01 -->
+
+<div class="product">
+
+<div class="product-header">
+
+<div>
+
+<h2>
+01 — Kheri Chappal
+</h2>
+
+<p>
+Traditional Pakistani leather craftsmanship.
+</p>
+
+</div>
+
+<div class="product-number">
+RAJAFIDA / 01
+</div>
+
+</div>
+
+
+<div class="tiers">
+
+
+<!-- ESSENTIAL -->
+
+<div class="tier essential">
+
+<div class="tier-number">
+01
+</div>
+
+<div class="tier-name">
+ESSENTIAL
+</div>
+
+<div class="tier-subtitle">
+Everyday Collection
+</div>
+
+<ul class="features">
+
+<li>
+Quality leather
+</li>
+
+<li>
+Traditional design
+</li>
+
+<li>
+Comfort-focused finish
+</li>
+
+<li>
+Everyday packaging
+</li>
+
+</ul>
+
+<div class="price">
+100 AED
+</div>
+
+<a href="#" class="order">
+ORDER NOW
+</a>
+
+</div>
+
+
+<!-- STANDARD -->
+
+<div class="tier standard">
+
+<div class="tier-number">
+02
+</div>
+
+<div class="tier-name">
+STANDARD
+</div>
+
+<div class="tier-subtitle">
+Signature Collection
+</div>
+
+<ul class="features">
+
+<li>
+Premium leather
+</li>
+
+<li>
+Enhanced craftsmanship
+</li>
+
+<li>
+Refined finishing
+</li>
+
+<li>
+Premium packaging
+</li>
+
+</ul>
+
+<div class="price">
+150 AED
+</div>
+
+<a href="#" class="order">
+ORDER NOW
+</a>
+
+</div>
+
+
+<!-- PREMIUM -->
+
+<div class="tier premium">
+
+<div class="limited">
+LIMITED EDITION
+</div>
+
+<div class="tier-number">
+03
+</div>
+
+<div class="tier-name">
+PREMIUM
+</div>
+
+<div class="tier-subtitle">
+Exclusive Collection
+</div>
+
+<ul class="features">
+
+<li>
+Finest selected leather
+</li>
+
+<li>
+Master craftsmanship
+</li>
+
+<li>
+Exclusive finishing
+</li>
+
+<li>
+Luxury presentation box
+</li>
+
+</ul>
+
+<div class="price">
+250 AED
+</div>
+
+<a href="#" class="order">
+RESERVE NOW
+</a>
+
+<div class="limited-info">
+<strong>Only 25 pieces</strong>
+available worldwide.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 02 -->
+
+<div class="product">
+
+<div class="product-header">
+
+<div>
+
+<h2>
+02 — Shalwar Kameez
+</h2>
+
+<p>
+Traditional clothing with modern elegance.
+</p>
+
+</div>
+
+<div class="product-number">
+RAJAFIDA / 02
+</div>
+
+</div>
+
+
+<div class="tiers">
+
+
+<div class="tier essential">
+
+<div class="tier-number">
+01
+</div>
+
+<div class="tier-name">
+ESSENTIAL
+</div>
+
+<div class="tier-subtitle">
+Everyday Collection
+</div>
+
+<ul class="features">
+
+<li>
+Comfort fabric
+</li>
+
+<li>
+Classic design
+</li>
+
+<li>
+Clean stitching
+</li>
+
+</ul>
+
+<div class="price">
+150 AED
+</div>
+
+<a href="#" class="order">
+ORDER NOW
+</a>
+
+</div>
+
+
+<div class="tier standard">
+
+<div class="tier-number">
+02
+</div>
+
+<div class="tier-name">
+STANDARD
+</div>
+
+<div class="tier-subtitle">
+Signature Collection
+</div>
+
+<ul class="features">
+
+<li>
+Premium fabric
+</li>
+
+<li>
+Detailed stitching
+</li>
+
+<li>
+Refined finishing
+</li>
+
+</ul>
+
+<div class="price">
+250 AED
+</div>
+
+<a href="#" class="order">
+ORDER NOW
+</a>
+
+</div>
+
+
+<div class="tier premium">
+
+<div class="limited">
+LIMITED EDITION
+</div>
+
+<div class="tier-number">
+03
+</div>
+
+<div class="tier-name">
+PREMIUM
+</div>
+
+<div class="tier-subtitle">
+Exclusive Collection
+</div>
+
+<ul class="features">
+
+<li>
+Luxury fabric
+</li>
+
+<li>
+Hand-finished details
+</li>
+
+<li>
+Exclusive design
+</li>
+
+<li>
+Luxury packaging
+</li>
+
+</ul>
+
+<div class="price">
+450 AED
+</div>
+
+<a href="#" class="order">
+RESERVE NOW
+</a>
+
+<div class="limited-info">
+<strong>Only 15 pieces</strong>
+available worldwide.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 03 -->
+
+<div class="product" id="limited">
+
+<div class="product-header">
+
+<div>
+
+<h2>
+03 — Balochi Royal Pagri
+</h2>
+
+<p>
+A symbol of heritage, pride and identity.
+</p>
+
+</div>
+
+<div class="product-number">
+RAJAFIDA / 03
+</div>
+
+</div>
+
+
+<div class="tiers">
+
+
+<div class="tier essential">
+
+<div class="tier-number">
+01
+</div>
+
+<div class="tier-name">
+ESSENTIAL
+</div>
+
+<div class="tier-subtitle">
+Everyday Collection
+</div>
+
+<ul class="features">
+
+<li>
+Traditional fabric
+</li>
+
+<li>
+Classic styling
+</li>
+
+<li>
+Comfortable fit
+</li>
+
+</ul>
+
+<div class="price">
+100 AED
+</div>
+
+<a href="#" class="order">
+ORDER NOW
+</a>
+
+</div>
+
+
+<div class="tier standard">
+
+<div class="tier-number">
+02
+</div>
+
+<div class="tier-name">
+STANDARD
+</div>
+
+<div class="tier-subtitle">
+Signature Collection
+</div>
+
+<ul class="features">
+
+<li>
+Better quality fabric
+</li>
+
+<li>
+Detailed finishing
+</li>
+
+<li>
+Signature styling
+</li>
+
+</ul>
+
+<div class="price">
+175 AED
+</div>
+
+<a href="#" class="order">
+ORDER NOW
+</a>
+
+</div>
+
+
+<div class="tier premium">
+
+<div class="limited">
+LIMITED EDITION
+</div>
+
+<div class="tier-number">
+03
+</div>
+
+<div class="tier-name">
+PREMIUM
+</div>
+
+<div class="tier-subtitle">
+Royal Collection
+</div>
+
+<ul class="features">
+
+<li>
+Finest selected fabric
+</li>
+
+<li>
+Handcrafted details
+</li>
+
+<li>
+Royal finishing
+</li>
+
+<li>
+VIP presentation
+</li>
+
+</ul>
+
+<div class="price">
+350 AED
+</div>
+
+<a href="#" class="order">
+RESERVE NOW
+</a>
+
+<div class="limited-info">
+<strong>Only 10 pieces</strong>
+available worldwide.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section
+class="collection"
+id="contact"
+style="text-align:center;"
+>
+
+<div class="label">
+RAJAFIDA
+</div>
+
+<h2 class="section-title">
+Own Something Rare.
+</h2>
+
+<p class="section-description">
+
+Our Premium Limited Editions are produced
+in very small quantities. Once a collection
+is sold out, it may never return.
+
+</p>
+
+<a
+href="#"
+class="order"
+style="
+padding:15px 35px;
+border-color:#d4af37;
+color:#d4af37;
+"
+>
+CONTACT & ORDER
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+RAJAFIDA
+</div>
+
+<p>
+Pakistani Heritage • Modern Luxury
+</p>
+
+<br>
+
+<p>
+© 2026 RajaFida • All Rights Reserved
+</p>
+
+</footer>
+
+
+</body>
+
+</html>
