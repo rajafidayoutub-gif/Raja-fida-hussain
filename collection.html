@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 
 <head>
 
@@ -26,8 +26,6 @@ body{
     font-family:Arial,Helvetica,sans-serif;
     overflow-x:hidden;
 }
-
-/* BACKGROUND */
 
 body::before{
     content:"";
@@ -81,6 +79,7 @@ nav{
 }
 
 .logo{
+    direction:ltr;
     color:#d4af37;
     font-size:20px;
     font-weight:bold;
@@ -90,6 +89,7 @@ nav{
 .nav-links{
     display:flex;
     gap:28px;
+    direction:ltr;
 }
 
 .nav-links a{
@@ -178,9 +178,11 @@ nav{
     font-size:10px;
     letter-spacing:7px;
     margin-bottom:25px;
+    direction:ltr;
 }
 
 .hero h1{
+    direction:ltr;
     font-size:clamp(50px,10vw,105px);
     letter-spacing:8px;
     color:#d4af37;
@@ -198,7 +200,7 @@ nav{
     max-width:680px;
     margin:auto;
     color:#888;
-    line-height:1.8;
+    line-height:2;
     font-size:15px;
 }
 
@@ -216,6 +218,7 @@ nav{
     font-size:10px;
     letter-spacing:7px;
     margin-bottom:18px;
+    direction:ltr;
 }
 
 .section-title{
@@ -229,7 +232,7 @@ nav{
     color:#777;
     max-width:700px;
     margin:0 auto 70px;
-    line-height:1.8;
+    line-height:2;
 }
 
 /* PRODUCT */
@@ -274,29 +277,30 @@ nav{
 }
 
 .product-heading h2{
+    direction:ltr;
     font-size:30px;
     margin-bottom:8px;
 }
 
 .product-heading p{
     color:#777;
+    line-height:1.9;
 }
 
 .product-id{
+    direction:ltr;
     color:#555;
     font-size:11px;
     letter-spacing:2px;
 }
 
-/* TWO QUALITIES */
+/* QUALITIES */
 
 .qualities{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:22px;
 }
-
-/* QUALITY CARD */
 
 .quality{
     position:relative;
@@ -375,12 +379,12 @@ nav{
     color:#d4af37;
 }
 
-/* PREMIUM BADGE */
+/* BADGE */
 
 .badge{
     position:absolute;
     top:18px;
-    right:18px;
+    left:18px;
     padding:7px 12px;
     border-radius:30px;
     background:#d4af37;
@@ -388,6 +392,7 @@ nav{
     font-size:8px;
     font-weight:bold;
     letter-spacing:1px;
+    direction:ltr;
     animation:badgePulse 2s infinite;
 }
 
@@ -405,27 +410,28 @@ nav{
 /* CONTENT */
 
 .quality-number{
+    direction:ltr;
     color:#555;
     font-size:11px;
     margin-bottom:20px;
 }
 
 .quality-name{
+    direction:ltr;
     font-size:28px;
     font-weight:bold;
-    margin-bottom:5px;
+    margin-bottom:8px;
 }
 
 .quality-urdu{
     color:#aaa;
     font-size:15px;
-    direction:rtl;
     margin-bottom:25px;
 }
 
 .quality-description{
     color:#888;
-    line-height:1.7;
+    line-height:2;
     font-size:13px;
     margin-bottom:22px;
 }
@@ -444,10 +450,11 @@ nav{
 .features li::before{
     content:"✓";
     color:#d4af37;
-    margin-right:9px;
+    margin-left:9px;
 }
 
 .price{
+    direction:ltr;
     font-size:23px;
     font-weight:bold;
     margin-bottom:18px;
@@ -468,6 +475,7 @@ nav{
     text-decoration:none;
     font-size:11px;
     letter-spacing:1px;
+    direction:ltr;
     transition:.4s;
 }
 
@@ -489,19 +497,19 @@ nav{
 /* AUTHENTICITY */
 
 .authenticity{
-    margin-top:35px;
+    margin-top:25px;
     padding-top:18px;
     border-top:1px solid rgba(212,175,55,.15);
     color:#777;
     font-size:11px;
-    line-height:1.7;
+    line-height:2;
 }
 
 .authenticity strong{
     color:#d4af37;
 }
 
-/* VERIFICATION SECTION */
+/* VERIFICATION */
 
 .verify{
     max-width:900px;
@@ -542,13 +550,14 @@ nav{
 
 .verify h2 span{
     color:#d4af37;
+    direction:ltr;
 }
 
 .verify p{
     color:#888;
     max-width:600px;
     margin:0 auto 25px;
-    line-height:1.8;
+    line-height:2;
 }
 
 .verify-button{
@@ -560,6 +569,7 @@ nav{
     text-decoration:none;
     font-size:11px;
     letter-spacing:1px;
+    direction:ltr;
     transition:.4s;
 }
 
@@ -578,10 +588,15 @@ footer{
 }
 
 .footer-logo{
+    direction:ltr;
     color:#d4af37;
     font-size:24px;
     letter-spacing:6px;
     margin-bottom:12px;
+}
+
+footer p{
+    line-height:2;
 }
 
 /* MOBILE */
@@ -635,16 +650,14 @@ footer{
 
 </head>
 
-
 <body>
-
 
 <!-- NAVIGATION -->
 
 <nav>
 
 <div class="logo">
-RAJAFIDA
+RajaFida
 </div>
 
 <div class="nav-links">
@@ -657,7 +670,7 @@ HOME
 COLLECTION
 </a>
 
-<a href="#verify">
+<a href="verify.html">
 AUTHENTICITY
 </a>
 
@@ -687,11 +700,9 @@ THE COLLECTION
 </h2>
 
 <p>
-Discover RajaFida through two carefully
-defined levels of craftsmanship —
-Standard for refined everyday elegance,
-and Premium Limited Edition for those
-who seek something truly rare.
+راجافدا کے مجموعے میں دو الگ معیار پیش کیے گئے ہیں۔
+ایک ایسا معیار جو خوبصورتی اور عمدہ کاریگری کو مناسب قیمت کے ساتھ پیش کرتا ہے،
+اور دوسرا محدود خصوصی معیار جو نایاب پن اور اعلیٰ دستکاری کی نمائندگی کرتا ہے۔
 </p>
 
 </div>
@@ -712,10 +723,9 @@ OUR COLLECTION
 </h2>
 
 <p class="section-subtitle">
-Every RajaFida creation is offered in two
-distinct qualities. Choose refined everyday
-craftsmanship or step into the world of
-limited luxury.
+راجافدا کی ہر تخلیق دو الگ معیار میں پیش کی جاتی ہے۔
+آپ روزمرہ کی نفاست کے لیے معیاری مجموعہ منتخب کر سکتے ہیں،
+یا محدود خصوصی مجموعے کے ذریعے نایاب کاریگری کا انتخاب کر سکتے ہیں۔
 </p>
 
 
@@ -732,7 +742,7 @@ limited luxury.
 </h2>
 
 <p>
-روایتی پاکستانی دستکاری، جدید انداز کے ساتھ۔
+روایتی پاکستانی دستکاری کو جدید انداز کے ساتھ پیش کیا گیا ہے۔
 </p>
 
 </div>
@@ -765,9 +775,8 @@ STANDARD
 
 <div class="quality-description">
 
-اچھا میٹیریل، خوبصورت فنشنگ اور
-منفرد ڈیزائن — ایک ایسی چیز جو
-خوبصورتی، معیار اور مناسب قیمت
+اچھا مواد، خوبصورت تکمیل اور منفرد ڈیزائن۔
+ایک ایسی تخلیق جو خوبصورتی، معیار اور مناسب قیمت
 کو ایک ساتھ پیش کرتی ہے۔
 
 </div>
@@ -775,19 +784,19 @@ STANDARD
 <ul class="features">
 
 <li>
-Good Quality Material
+اچھے معیار کا مواد
 </li>
 
 <li>
-Beautiful Finishing
+خوبصورت تکمیل
 </li>
 
 <li>
-Unique Design
+منفرد ڈیزائن
 </li>
 
 <li>
-Affordable
+مناسب قیمت
 </li>
 
 </ul>
@@ -820,42 +829,41 @@ PREMIUM
 </div>
 
 <div class="quality-urdu">
-محدود خصوصی ایڈیشن
+محدود خصوصی مجموعہ
 </div>
 
 <div class="quality-description">
 
-منتخب میٹیریل، منتخب کاریگروں کی
-ماہر دستکاری اور High-End Finishing۔
-ہر پیس محدود تعداد میں تیار کیا جاتا ہے
-اور اپنی منفرد شناخت رکھتا ہے۔
+منتخب اعلیٰ معیار کا مواد، ماہر کاریگروں کی دستکاری
+اور اعلیٰ درجے کی نفیس تکمیل کے ساتھ تیار کیا گیا محدود
+خصوصی مجموعہ۔ ہر شے اپنی منفرد شناخت رکھتی ہے۔
 
 </div>
 
 <ul class="features">
 
 <li>
-Selected Premium Material
+منتخب اعلیٰ معیار کا مواد
 </li>
 
 <li>
-Selected Master Craftsmen
+ماہر اور تجربہ کار کاریگر
 </li>
 
 <li>
-High-End Finishing
+اعلیٰ درجے کی نفیس تکمیل
 </li>
 
 <li>
-Limited Production
+محدود پیداوار
 </li>
 
 <li>
-Unique Identification Number
+منفرد شناختی نمبر
 </li>
 
 <li>
-Authenticity Certificate
+اصلیت کا تصدیقی سرٹیفکیٹ
 </li>
 
 </ul>
@@ -867,22 +875,17 @@ Authenticity Certificate
 <a href="verify.html" class="button">
 VERIFY / RESERVE
 </a>
-VERIFY / RESERVE
-</a>
 
 <div class="authenticity">
 
-<strong>AUTHENTICITY</strong><br>
+<strong>اصلیت کی تصدیق</strong><br>
 
-ہر Premium پیس کی شناخت ایک
-منفرد Identification Number سے ہوگی۔
-خریدار مستقبل میں RajaFida کے ذریعے
-اپنے پیس کی اصلیت کی تصدیق کر سکے گا۔
+ہر محدود خصوصی شے کی شناخت ایک منفرد شناختی نمبر سے ہوگی۔
+خریدار راجافدا کے ذریعے اپنے پیس کی اصلیت کی تصدیق کر سکے گا۔
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -902,7 +905,7 @@ VERIFY / RESERVE
 </h2>
 
 <p>
-پاکستانی روایت، نفیس اور جدید پیشکش کے ساتھ۔
+پاکستانی روایت کو نفیس اور جدید انداز میں پیش کیا گیا ہے۔
 </p>
 
 </div>
@@ -933,28 +936,27 @@ STANDARD
 
 <div class="quality-description">
 
-اچھا میٹیریل، خوبصورت فنشنگ،
-منفرد ڈیزائن اور مناسب قیمت —
-روزمرہ اور خاص مواقع دونوں کے لیے۔
+اچھا مواد، خوبصورت تکمیل، منفرد ڈیزائن اور مناسب قیمت۔
+روزمرہ استعمال اور خاص مواقع دونوں کے لیے موزوں۔
 
 </div>
 
 <ul class="features">
 
 <li>
-Good Quality Material
+اچھے معیار کا مواد
 </li>
 
 <li>
-Beautiful Finishing
+خوبصورت تکمیل
 </li>
 
 <li>
-Unique Design
+منفرد ڈیزائن
 </li>
 
 <li>
-Affordable
+مناسب قیمت
 </li>
 
 </ul>
@@ -985,42 +987,41 @@ PREMIUM
 </div>
 
 <div class="quality-urdu">
-محدود خصوصی ایڈیشن
+محدود خصوصی مجموعہ
 </div>
 
 <div class="quality-description">
 
-منتخب اعلیٰ معیار کے کپڑے،
-منتخب کاریگر، High-End Finishing
-اور محدود پیداوار۔ ہر پیس اپنی
-منفرد شناخت رکھتا ہے۔
+منتخب اعلیٰ معیار کا کپڑا، ماہر کاریگر اور
+اعلیٰ درجے کی نفیس تکمیل کے ساتھ تیار کیا گیا
+محدود خصوصی مجموعہ۔
 
 </div>
 
 <ul class="features">
 
 <li>
-Selected Material
+منتخب اعلیٰ معیار کا مواد
 </li>
 
 <li>
-Master Craftsmanship
+ماہر اور تجربہ کار کاریگر
 </li>
 
 <li>
-High-End Finishing
+اعلیٰ درجے کی نفیس تکمیل
 </li>
 
 <li>
-Limited Edition
+محدود پیداوار
 </li>
 
 <li>
-Unique ID
+منفرد شناختی نمبر
 </li>
 
 <li>
-Authenticity Certificate
+اصلیت کا تصدیقی سرٹیفکیٹ
 </li>
 
 </ul>
@@ -1029,12 +1030,11 @@ Authenticity Certificate
 450 AED
 </div>
 
-<a href="#verify" class="button">
+<a href="verify.html" class="button">
 VERIFY / RESERVE
 </a>
 
 </div>
-
 
 </div>
 
@@ -1085,27 +1085,26 @@ STANDARD
 
 <div class="quality-description">
 
-اچھا میٹیریل، خوبصورت فنشنگ،
-منفرد ڈیزائن اور مناسب قیمت۔
+اچھا مواد، خوبصورت تکمیل، منفرد ڈیزائن اور مناسب قیمت۔
 
 </div>
 
 <ul class="features">
 
 <li>
-Good Quality Material
+اچھے معیار کا مواد
 </li>
 
 <li>
-Beautiful Finishing
+خوبصورت تکمیل
 </li>
 
 <li>
-Unique Design
+منفرد ڈیزائن
 </li>
 
 <li>
-Affordable
+مناسب قیمت
 </li>
 
 </ul>
@@ -1136,42 +1135,41 @@ PREMIUM
 </div>
 
 <div class="quality-urdu">
-شاہانہ محدود ایڈیشن
+شاہانہ محدود مجموعہ
 </div>
 
 <div class="quality-description">
 
-منتخب میٹیریل، منتخب ماہر کاریگر،
-High-End Finishing اور محدود تعداد۔
-ایک ایسا پیس جو صرف خریدا نہیں،
-محفوظ کیا جاتا ہے۔
+منتخب اعلیٰ معیار کا مواد، ماہر کاریگروں کی دستکاری
+اور اعلیٰ درجے کی نفیس تکمیل کے ساتھ تیار کیا گیا محدود
+خصوصی مجموعہ۔ ایسی شے جو صرف خریدی نہیں جاتی بلکہ محفوظ کی جاتی ہے۔
 
 </div>
 
 <ul class="features">
 
 <li>
-Selected Material
+منتخب اعلیٰ معیار کا مواد
 </li>
 
 <li>
-Selected Craftsmen
+ماہر اور تجربہ کار کاریگر
 </li>
 
 <li>
-High-End Finishing
+اعلیٰ درجے کی نفیس تکمیل
 </li>
 
 <li>
-Limited Production
+محدود پیداوار
 </li>
 
 <li>
-Unique Identification Number
+منفرد شناختی نمبر
 </li>
 
 <li>
-Authenticity Verification
+اصلیت کی تصدیق
 </li>
 
 </ul>
@@ -1180,12 +1178,11 @@ Authenticity Verification
 350 AED
 </div>
 
-<a href="#verify" class="button">
+<a href="verify.html" class="button">
 VERIFY / RESERVE
 </a>
 
 </div>
-
 
 </div>
 
@@ -1197,7 +1194,7 @@ VERIFY / RESERVE
 
 <!-- AUTHENTICITY -->
 
-<section class="collection" id="verify">
+<section class="collection">
 
 <div class="verify">
 
@@ -1211,14 +1208,12 @@ Verify Your <span>RajaFida</span>
 
 <p>
 
-Premium Limited Edition کے ہر پیس کے لیے
-ایک منفرد Identification Number ہوگا۔
-خریدار اس نمبر کے ذریعے اپنے پیس کی
-اصلیت کی تصدیق کر سکے گا۔
+محدود خصوصی مجموعے کی ہر شے کے لیے ایک منفرد شناختی نمبر ہوگا۔
+اس شناختی نمبر کے ذریعے خریدار اپنی شے کی اصلیت کی تصدیق کر سکے گا۔
 
 </p>
 
-<a href="#" class="verify-button">
+<a href="verify.html" class="verify-button">
 VERIFY AUTHENTICITY
 </a>
 
@@ -1232,11 +1227,11 @@ VERIFY AUTHENTICITY
 <footer>
 
 <div class="footer-logo">
-RAJAFIDA
+RajaFida
 </div>
 
 <p>
-پاکستانی ورثہ • جدید معیار • محدود لگژری
+پاکستانی ورثہ • جدید معیار • محدود عیش و نفاست
 </p>
 
 <br>
@@ -1246,7 +1241,6 @@ RAJAFIDA
 </p>
 
 </footer>
-
 
 </body>
 
