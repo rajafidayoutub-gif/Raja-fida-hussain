@@ -1,42 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RAJA | Heritage Reimagined</title>
+<title>Raja Fida Hussain | Connect</title>
 
 <style>
 
-/* =========================================================
-   RAJA — HIGH PREMIUM LANDING PAGE
-========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;500;600&display=swap');
 
 :root{
-
     --black:#030303;
-    --black2:#080706;
-
     --gold:#d6b45a;
-    --gold2:#f4df9a;
-    --gold3:#8e6d29;
-
-    --cream:#f5ead0;
-
-    --muted:#99938a;
-
+    --gold2:#f6e4a5;
+    --muted:#969088;
     --line:rgba(214,180,90,.20);
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
     margin:0;
@@ -50,28 +31,29 @@ html{
 
 body{
 
-    background:
-    radial-gradient(
-        circle at 50% 15%,
-        #211a0c 0%,
-        #090806 27%,
-        #030303 65%
-    );
+    min-height:100vh;
 
     color:white;
 
     font-family:
     Arial,
-    Helvetica,
     sans-serif;
+
+    background:
+    radial-gradient(
+        circle at 50% 0%,
+        #211a0b 0%,
+        #0b0906 25%,
+        #030303 65%
+    );
 
     overflow-x:hidden;
 }
 
 
-/* =========================================================
-   PREMIUM AMBIENT LIGHT
-========================================================= */
+/* =========================================
+   AMBIENT LIGHT
+========================================= */
 
 body::before{
 
@@ -82,465 +64,63 @@ body::before{
     width:600px;
     height:600px;
 
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(214,180,90,.12),
-        transparent 68%
-    );
-
     top:-350px;
     left:50%;
 
     transform:translateX(-50%);
 
-    pointer-events:none;
-
-    z-index:-5;
-
-    animation:
-    ambient 7s ease-in-out infinite;
-}
-
-
-@keyframes ambient{
-
-    0%,100%{
-        opacity:.55;
-        transform:
-        translateX(-50%)
-        scale(1);
-    }
-
-    50%{
-        opacity:1;
-        transform:
-        translateX(-50%)
-        scale(1.18);
-    }
-}
-
-
-/* =========================================================
-   OPENING / INTRO
-========================================================= */
-
-#intro{
-
-    position:fixed;
-
-    inset:0;
-
-    background:#020202;
-
-    z-index:99999;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    overflow:hidden;
-
-    animation:
-    introFade 1.2s ease 3.4s forwards;
-}
-
-
-@keyframes introFade{
-
-    to{
-        opacity:0;
-        visibility:hidden;
-        pointer-events:none;
-    }
-}
-
-
-.intro-light{
-
-    position:absolute;
-
-    width:400px;
-    height:400px;
-
     border-radius:50%;
 
     background:
     radial-gradient(
         circle,
-        rgba(214,180,90,.20),
+        rgba(214,180,90,.15),
         transparent 70%
     );
 
-    filter:blur(30px);
+    filter:blur(20px);
+
+    pointer-events:none;
 
     animation:
-    introLight 2.5s ease forwards;
+    glow 6s ease-in-out infinite;
+
+    z-index:-2;
 }
 
-
-@keyframes introLight{
-
-    from{
-        transform:scale(.2);
-        opacity:0;
-    }
-
-    50%{
-        transform:scale(1);
-        opacity:1;
-    }
-
-    to{
-        transform:scale(1.5);
-        opacity:.4;
-    }
-}
-
-
-/* =========================================================
-   CALLIGRAPHY LOGO
-========================================================= */
-
-.logo-stage{
-
-    position:relative;
-
-    width:280px;
-    height:280px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    animation:
-    logoEnter 2.1s cubic-bezier(.16,1,.3,1) forwards;
-}
-
-
-@keyframes logoEnter{
-
-    0%{
-
-        opacity:0;
-
-        transform:
-        scale(.25)
-        translateY(80px)
-        rotate(-10deg);
-
-        filter:
-        blur(12px);
-    }
-
-    55%{
-
-        opacity:1;
-
-        transform:
-        scale(1.08)
-        translateY(0)
-        rotate(2deg);
-
-        filter:
-        blur(0);
-    }
-
-    100%{
-
-        opacity:1;
-
-        transform:
-        scale(1)
-        translateY(0)
-        rotate(0);
-    }
-}
-
-
-/* OUTER ROYAL RING */
-
-.logo-ring{
-
-    position:absolute;
-
-    width:245px;
-    height:245px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(214,180,90,.45);
-
-    box-shadow:
-    0 0 35px rgba(214,180,90,.10),
-    inset 0 0 35px rgba(214,180,90,.05);
-
-    animation:
-    ringSpin 14s linear infinite;
-}
-
-
-.logo-ring::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:12px;
-
-    border-radius:50%;
-
-    border:
-    1px dashed
-    rgba(214,180,90,.25);
-}
-
-
-@keyframes ringSpin{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-
-/* STATIC CROWN */
-
-.crown{
-
-    position:absolute;
-
-    top:28px;
-
-    z-index:8;
-
-    font-size:40px;
-
-    color:var(--gold2);
-
-    filter:
-    drop-shadow(
-        0 0 12px
-        rgba(214,180,90,.55)
-    );
-
-    /* Crown intentionally has NO animation */
-}
-
-
-/* =========================================================
-   URDU CALLIGRAPHY
-========================================================= */
-
-.calligraphy{
-
-    position:relative;
-
-    z-index:7;
-
-    direction:rtl;
-
-    font-family:
-    "Amiri",
-    "Noto Naskh Arabic",
-    serif;
-
-    font-size:74px;
-
-    font-weight:700;
-
-    color:transparent;
-
-    background:
-    linear-gradient(
-        120deg,
-        #8f6b25,
-        #fff1b1,
-        #d6b45a,
-        #fff3b8,
-        #8f6b25
-    );
-
-    background-size:300% 100%;
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    filter:
-    drop-shadow(
-        0 0 18px
-        rgba(214,180,90,.35)
-    );
-
-    animation:
-    goldFlow 5s ease-in-out infinite;
-}
-
-
-@keyframes goldFlow{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-}
-
-
-/* =========================================================
-   DOUBLE EDGED SWORD
-========================================================= */
-
-.sword{
-
-    position:absolute;
-
-    z-index:5;
-
-    width:150px;
-
-    height:5px;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        #fff3b8 25%,
-        #d6b45a 55%,
-        transparent
-    );
-
-    transform:
-    rotate(-42deg)
-    translateX(-5px);
-
-    border-radius:100%;
-
-    box-shadow:
-    0 0 12px
-    rgba(214,180,90,.75);
-
-    animation:
-    swordSweep 2.8s ease-in-out infinite;
-}
-
-
-.sword::before{
-
-    content:"";
-
-    position:absolute;
-
-    right:-3px;
-
-    top:-5px;
-
-    width:15px;
-    height:15px;
-
-    border-top:
-    2px solid
-    var(--gold2);
-
-    border-right:
-    2px solid
-    var(--gold2);
-
-    transform:rotate(45deg);
-}
-
-
-.sword::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:8px;
-
-    top:-5px;
-
-    width:20px;
-    height:15px;
-
-    border:
-    2px solid
-    var(--gold);
-
-    border-radius:50%;
-}
-
-
-@keyframes swordSweep{
+@keyframes glow{
 
     0%,100%{
-
-        transform:
-        rotate(-42deg)
-        translateX(-5px)
-        scaleX(.88);
-
-        opacity:.7;
+        transform:translateX(-50%) scale(1);
+        opacity:.55;
     }
 
     50%{
-
-        transform:
-        rotate(-42deg)
-        translateX(20px)
-        scaleX(1.05);
-
+        transform:translateX(-50%) scale(1.25);
         opacity:1;
-
-        filter:
-        drop-shadow(
-            0 0 18px
-            rgba(214,180,90,.9)
-        );
     }
 }
 
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* =========================================
+   NAVIGATION
+========================================= */
 
-.nav{
+nav{
 
     position:fixed;
 
-    top:22px;
-
+    top:20px;
     left:50%;
 
     transform:translateX(-50%);
 
     width:92%;
+    max-width:1150px;
 
-    max-width:1250px;
+    height:68px;
 
-    height:72px;
-
-    padding:0 25px;
+    padding:0 24px;
 
     display:flex;
 
@@ -548,11 +128,8 @@ body::before{
 
     justify-content:space-between;
 
-    z-index:1000;
-
     border:
-    1px solid
-    rgba(214,180,90,.16);
+    1px solid var(--line);
 
     border-radius:50px;
 
@@ -561,15 +138,10 @@ body::before{
 
     backdrop-filter:blur(18px);
 
-    box-shadow:
-    0 15px 50px
-    rgba(0,0,0,.35);
+    z-index:100;
 }
 
-
-/* SMALL NAV LOGO */
-
-.nav-logo{
+.logo{
 
     direction:rtl;
 
@@ -577,7 +149,7 @@ body::before{
     "Amiri",
     serif;
 
-    font-size:32px;
+    font-size:34px;
 
     font-weight:700;
 
@@ -586,22 +158,11 @@ body::before{
     text-decoration:none;
 
     text-shadow:
-    0 0 15px
-    rgba(214,180,90,.25);
+    0 0 18px
+    rgba(214,180,90,.3);
 }
 
-
-.nav-links{
-
-    display:flex;
-
-    gap:30px;
-
-    direction:ltr;
-}
-
-
-.nav-links a{
+.back{
 
     color:#aaa;
 
@@ -609,64 +170,26 @@ body::before{
 
     font-size:10px;
 
-    letter-spacing:1.7px;
+    letter-spacing:2px;
 
-    transition:.35s;
+    transition:.3s;
 }
 
-
-.nav-links a:hover{
-
+.back:hover{
     color:var(--gold2);
-
-    text-shadow:
-    0 0 12px
-    rgba(214,180,90,.4);
 }
 
 
-/* LANGUAGE */
-
-.language{
-
-    direction:ltr;
-
-    color:#aaa;
-
-    background:transparent;
-
-    border:
-    1px solid
-    rgba(214,180,90,.25);
-
-    padding:
-    8px 12px;
-
-    border-radius:20px;
-
-    font-size:10px;
-
-    cursor:pointer;
-}
-
-
-.language option{
-
-    background:#080808;
-
-    color:white;
-}
-
-
-/* =========================================================
+/* =========================================
    HERO
-========================================================= */
+========================================= */
 
 .hero{
 
-    min-height:100vh;
+    min-height:55vh;
 
-    position:relative;
+    padding:
+    150px 20px 70px;
 
     display:flex;
 
@@ -676,105 +199,33 @@ body::before{
 
     text-align:center;
 
-    padding:
-    150px 20px 90px;
-
-    overflow:hidden;
+    position:relative;
 }
-
-
-/* GOLD ORBIT */
-
-.orbit{
-
-    position:absolute;
-
-    width:720px;
-    height:720px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(214,180,90,.06);
-
-    animation:
-    orbitSpin 35s linear infinite;
-}
-
-
-.orbit::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:100px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(214,180,90,.045);
-}
-
-
-.orbit::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:200px;
-
-    border-radius:50%;
-
-    border:
-    1px dashed
-    rgba(214,180,90,.04);
-}
-
-
-@keyframes orbitSpin{
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-
-/* HERO CONTENT */
 
 .hero-content{
 
-    position:relative;
-
-    z-index:10;
-
-    max-width:900px;
+    max-width:800px;
 
     animation:
-    heroReveal 1.4s ease 3.5s both;
+    reveal 1.2s ease both;
 }
 
-
-@keyframes heroReveal{
+@keyframes reveal{
 
     from{
         opacity:0;
         transform:translateY(35px);
+        filter:blur(8px);
     }
 
     to{
         opacity:1;
         transform:translateY(0);
+        filter:blur(0);
     }
 }
 
-
 .kicker{
-
-    direction:ltr;
 
     color:var(--gold);
 
@@ -782,39 +233,36 @@ body::before{
 
     letter-spacing:7px;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
-
-.hero-title{
-
-    direction:ltr;
+h1{
 
     font-family:
     "Cinzel",
     Georgia,
     serif;
 
-    font-size:
-    clamp(48px,9vw,105px);
-
-    letter-spacing:
-    clamp(5px,1vw,12px);
-
     font-weight:500;
 
-    line-height:1;
+    font-size:
+    clamp(42px,8vw,82px);
 
-    margin-bottom:25px;
+    letter-spacing:
+    clamp(2px,1vw,8px);
+
+    line-height:1.05;
+
+    margin-bottom:20px;
 
     background:
     linear-gradient(
         110deg,
-        #8f6b25,
-        #fff2ae,
+        #9b772c,
+        #fff2b0,
         #d6b45a,
-        #fff2ae,
-        #8f6b25
+        #fff2b0,
+        #9b772c
     );
 
     background-size:250% auto;
@@ -826,11 +274,10 @@ body::before{
     background-clip:text;
 
     animation:
-    titleGold 6s linear infinite;
+    goldMove 6s linear infinite;
 }
 
-
-@keyframes titleGold{
+@keyframes goldMove{
 
     to{
         background-position:
@@ -838,61 +285,226 @@ body::before{
     }
 }
 
+.subtitle{
 
-.hero-subtitle{
-
-    direction:ltr;
+    color:#ddd5c5;
 
     font-family:
     Georgia,
     serif;
 
     font-size:
-    clamp(20px,3vw,31px);
+    clamp(19px,3vw,27px);
 
-    color:#e8dfcd;
-
-    font-weight:400;
-
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
+.description{
 
-.hero-text{
-
-    max-width:650px;
+    max-width:620px;
 
     margin:auto;
 
-    color:#8f8b84;
-
-    font-size:14px;
+    color:var(--muted);
 
     line-height:2;
 
-    direction:ltr;
+    font-size:14px;
 }
 
 
-/* =========================================================
-   CTA
-========================================================= */
+/* =========================================
+   SOCIAL GRID
+========================================= */
 
-.hero-buttons{
+.social-section{
+
+    width:92%;
+
+    max-width:1050px;
+
+    margin:
+    0 auto 110px;
+}
+
+.social-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+}
+
+
+/* =========================================
+   SOCIAL CARD
+========================================= */
+
+.social-card{
+
+    position:relative;
+
+    min-height:210px;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    border:
+    1px solid
+    rgba(214,180,90,.15);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.012)
+    );
+
+    overflow:hidden;
 
     display:flex;
 
-    justify-content:center;
+    flex-direction:column;
 
-    gap:14px;
+    justify-content:space-between;
 
-    flex-wrap:wrap;
+    transition:
+    transform .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+}
 
-    margin-top:38px;
+.social-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    right:-100px;
+    top:-110px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(214,180,90,.13),
+        transparent 70%
+    );
+
+    transition:.5s;
+}
+
+.social-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    rgba(214,180,90,.5);
+
+    box-shadow:
+    0 20px 70px
+    rgba(0,0,0,.4);
+}
+
+.social-card:hover::before{
+
+    transform:scale(1.5);
+
+    opacity:1;
 }
 
 
-.btn{
+/* ICON */
+
+.icon{
+
+    width:54px;
+    height:54px;
+
+    border-radius:17px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    color:var(--gold2);
+
+    border:
+    1px solid
+    rgba(214,180,90,.3);
+
+    background:
+    rgba(214,180,90,.05);
+
+    box-shadow:
+    0 0 25px
+    rgba(214,180,90,.08);
+
+    animation:
+    iconPulse 4s ease-in-out infinite;
+}
+
+@keyframes iconPulse{
+
+    0%,100%{
+        box-shadow:
+        0 0 15px
+        rgba(214,180,90,.05);
+    }
+
+    50%{
+        box-shadow:
+        0 0 30px
+        rgba(214,180,90,.18);
+    }
+}
+
+.platform{
+
+    margin-top:22px;
+}
+
+.platform h2{
+
+    font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+    font-weight:500;
+
+    font-size:25px;
+
+    margin-bottom:7px;
+}
+
+.platform p{
+
+    color:#77736d;
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.follow{
 
     display:inline-flex;
 
@@ -900,387 +512,169 @@ body::before{
 
     justify-content:center;
 
-    min-width:165px;
+    width:max-content;
+
+    margin-top:20px;
 
     padding:
-    15px 25px;
+    11px 19px;
 
-    border-radius:50px;
+    border-radius:30px;
 
     text-decoration:none;
 
-    font-size:10px;
-
-    letter-spacing:1.4px;
-
-    direction:ltr;
-
-    transition:.4s;
-
-    cursor:pointer;
-}
-
-
-.btn-gold{
-
-    color:#080705;
+    color:#090806;
 
     background:
     linear-gradient(
         120deg,
-        #9b772c,
-        #f4df9a,
-        #c49b3b
+        #a47d2d,
+        #f3df99,
+        #c79d3c
     );
 
-    box-shadow:
-    0 10px 35px
-    rgba(214,180,90,.14);
-}
+    font-size:9px;
 
-
-.btn-gold:hover{
-
-    transform:
-    translateY(-5px);
-
-    box-shadow:
-    0 18px 50px
-    rgba(214,180,90,.28);
-}
-
-
-.btn-dark{
-
-    color:#ddd;
-
-    border:
-    1px solid
-    rgba(214,180,90,.35);
-
-    background:
-    rgba(255,255,255,.025);
-}
-
-
-.btn-dark:hover{
-
-    color:var(--gold2);
-
-    border-color:var(--gold);
-
-    transform:
-    translateY(-5px);
-}
-
-
-/* =========================================================
-   FLOATING CHAT
-========================================================= */
-
-.chat-dock{
-
-    position:fixed;
-
-    right:25px;
-
-    bottom:25px;
-
-    z-index:900;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-}
-
-
-.chat-button{
-
-    width:54px;
-    height:54px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(214,180,90,.45);
-
-    background:
-    rgba(8,8,8,.92);
-
-    color:var(--gold2);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-decoration:none;
-
-    font-size:19px;
-
-    box-shadow:
-    0 8px 35px
-    rgba(0,0,0,.45);
+    letter-spacing:1.5px;
 
     transition:.35s;
 }
 
-
-.chat-button:hover{
+.follow:hover{
 
     transform:
-    scale(1.1);
-
-    background:#15120a;
+    translateY(-3px);
 
     box-shadow:
-    0 0 30px
+    0 10px 30px
     rgba(214,180,90,.2);
 }
 
 
-/* =========================================================
-   SECTION
-========================================================= */
+/* =========================================
+   FEATURED WHATSAPP
+========================================= */
 
-.section{
+.featured{
 
-    max-width:1200px;
+    grid-column:
+    span 2;
 
-    margin:auto;
+    min-height:180px;
 
-    padding:
-    120px 6%;
+    background:
+    radial-gradient(
+        circle at 80% 20%,
+        #172719,
+        #080b08 45%,
+        #050505 80%
+    );
 }
 
-
-.section-kicker{
-
-    text-align:center;
-
-    direction:ltr;
-
-    color:var(--gold);
-
-    font-size:9px;
-
-    letter-spacing:6px;
-
-    margin-bottom:18px;
-}
-
-
-.section-title{
-
-    text-align:center;
-
-    direction:ltr;
-
-    font-family:
-    "Cinzel",
-    Georgia,
-    serif;
-
-    font-size:
-    clamp(34px,5vw,58px);
-
-    font-weight:500;
-
-    margin-bottom:20px;
-}
-
-
-.section-text{
-
-    max-width:700px;
-
-    margin:
-    0 auto 60px;
-
-    text-align:center;
-
-    color:#85817a;
-
-    line-height:2;
-
-    font-size:14px;
-
-    direction:ltr;
-}
-
-
-/* =========================================================
-   COLLECTION PREVIEW
-========================================================= */
-
-.collection-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:20px;
-}
-
-
-.collection-card{
-
-    min-height:390px;
-
-    border-radius:30px;
-
-    padding:40px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border:
-    1px solid
-    rgba(214,180,90,.13);
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    transition:.5s;
-}
-
-
-.collection-card:hover{
-
-    transform:
-    translateY(-9px);
+.featured .icon{
 
     border-color:
-    rgba(214,180,90,.4);
+    rgba(112,190,120,.35);
 }
 
 
-.standard{
+/* =========================================
+   INSTAGRAM
+========================================= */
+
+.instagram{
 
     background:
     radial-gradient(
-        circle at 75% 20%,
-        #26323a,
-        #0b0d0e 45%,
-        #050505 75%
+        circle at 85% 15%,
+        #271318,
+        #0b0809 45%,
+        #050505 80%
     );
 }
 
 
-.premium{
+/* =========================================
+   TIKTOK
+========================================= */
+
+.tiktok{
 
     background:
     radial-gradient(
-        circle at 75% 20%,
-        #4a370d,
-        #100d05 42%,
-        #040404 75%
+        circle at 85% 15%,
+        #10191c,
+        #070909 45%,
+        #040404 80%
     );
 }
 
 
-.collection-number{
+/* =========================================
+   FACEBOOK
+========================================= */
 
-    position:absolute;
+.facebook{
 
-    top:30px;
-    left:35px;
-
-    direction:ltr;
-
-    font-size:9px;
-
-    letter-spacing:3px;
-
-    color:#777;
+    background:
+    radial-gradient(
+        circle at 85% 15%,
+        #10192b,
+        #07090e 45%,
+        #040404 80%
+    );
 }
 
 
-.collection-card h3{
+/* =========================================
+   YOUTUBE
+========================================= */
 
-    direction:ltr;
+.youtube{
 
-    font-family:
-    "Cinzel",
-    Georgia,
-    serif;
-
-    font-size:
-    clamp(30px,4vw,48px);
-
-    margin-bottom:10px;
+    background:
+    radial-gradient(
+        circle at 85% 15%,
+        #28100d,
+        #0b0706 45%,
+        #040404 80%
+    );
 }
 
 
-.standard h3{
-    color:#c9e2ed;
-}
+/* =========================================
+   FINAL CTA
+========================================= */
 
+.connect{
 
-.premium h3{
-    color:var(--gold2);
-}
+    width:92%;
 
-
-.collection-card p{
-
-    max-width:480px;
-
-    color:#85817a;
-
-    line-height:2;
-
-    font-size:13px;
-
-    direction:ltr;
-
-    margin-bottom:25px;
-}
-
-
-/* =========================================================
-   PERSONAL BRAND
-========================================================= */
-
-.personal{
-
-    max-width:1050px;
+    max-width:900px;
 
     margin:
     0 auto 120px;
 
     padding:
-    85px 35px;
+    70px 30px;
 
     text-align:center;
 
-    border-radius:35px;
+    border-radius:32px;
 
     border:
     1px solid
-    rgba(214,180,90,.20);
+    rgba(214,180,90,.18);
 
     background:
     linear-gradient(
         145deg,
-        rgba(214,180,90,.08),
+        rgba(214,180,90,.07),
         rgba(255,255,255,.015)
     );
 }
 
-
-.personal h2{
-
-    direction:ltr;
+.connect h2{
 
     font-family:
     "Cinzel",
@@ -1288,328 +682,39 @@ body::before{
     serif;
 
     font-size:
-    clamp(34px,5vw,55px);
+    clamp(30px,5vw,48px);
 
     font-weight:500;
-
-    margin-bottom:20px;
-}
-
-
-.personal h2 span{
-
-    color:var(--gold2);
-}
-
-
-.personal p{
-
-    max-width:680px;
-
-    margin:auto;
-
-    color:#85817a;
-
-    line-height:2;
-
-    direction:ltr;
-}
-
-
-/* =========================================================
-   STORY
-========================================================= */
-
-.story{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:70px;
-
-    align-items:center;
-}
-
-
-.story-visual{
-
-    min-height:450px;
-
-    border-radius:35px;
-
-    border:
-    1px solid
-    rgba(214,180,90,.17);
-
-    background:
-    radial-gradient(
-        circle,
-        #30240b,
-        #0b0905 48%,
-        #040404 75%
-    );
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-
-.story-orbit{
-
-    position:absolute;
-
-    width:330px;
-    height:330px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(214,180,90,.18);
-
-    animation:
-    orbitSpin 20s linear infinite;
-}
-
-
-.story-logo{
-
-    position:relative;
-
-    z-index:2;
-
-    direction:rtl;
-
-    font-family:
-    "Amiri",
-    serif;
-
-    font-size:65px;
-
-    color:var(--gold2);
-
-    text-shadow:
-    0 0 25px
-    rgba(214,180,90,.3);
-}
-
-
-.story-content .section-kicker{
-
-    text-align:left;
-}
-
-
-.story-content h2{
-
-    direction:ltr;
-
-    font-family:
-    "Cinzel",
-    Georgia,
-    serif;
-
-    font-size:
-    clamp(35px,5vw,58px);
-
-    font-weight:500;
-
-    margin-bottom:25px;
-}
-
-
-.story-content p{
-
-    direction:ltr;
-
-    color:#85817a;
-
-    line-height:2.2;
-
-    margin-bottom:18px;
-
-    font-size:14px;
-}
-
-
-/* =========================================================
-   AI / CHAT AREA
-========================================================= */
-
-.assistant{
-
-    max-width:900px;
-
-    margin:auto;
-
-    border:
-    1px solid
-    rgba(214,180,90,.18);
-
-    border-radius:30px;
-
-    padding:
-    50px 30px;
-
-    text-align:center;
-
-    background:
-    rgba(255,255,255,.018);
-
-    box-shadow:
-    0 30px 100px
-    rgba(0,0,0,.25);
-}
-
-
-.assistant-icon{
-
-    width:70px;
-    height:70px;
-
-    margin:
-    0 auto 20px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:var(--gold2);
-
-    border:
-    1px solid
-    rgba(214,180,90,.4);
-
-    box-shadow:
-    0 0 35px
-    rgba(214,180,90,.12);
-
-    animation:
-    aiPulse 3s ease-in-out infinite;
-}
-
-
-@keyframes aiPulse{
-
-    0%,100%{
-        box-shadow:
-        0 0 20px
-        rgba(214,180,90,.08);
-    }
-
-    50%{
-        box-shadow:
-        0 0 45px
-        rgba(214,180,90,.25);
-    }
-}
-
-
-.assistant h2{
-
-    direction:ltr;
-
-    font-family:
-    "Cinzel",
-    Georgia,
-    serif;
-
-    font-weight:500;
-
-    font-size:35px;
 
     margin-bottom:15px;
 }
 
-
-.assistant p{
-
-    max-width:650px;
-
-    margin:
-    0 auto 25px;
-
-    color:#85817a;
-
-    line-height:2;
-
-    direction:ltr;
-}
-
-
-/* =========================================================
-   FINAL
-========================================================= */
-
-.final{
-
-    text-align:center;
-
-    padding:
-    130px 20px;
-}
-
-
-.final h2{
-
-    direction:ltr;
-
-    font-family:
-    "Cinzel",
-    Georgia,
-    serif;
-
-    font-size:
-    clamp(40px,7vw,78px);
-
-    font-weight:500;
-
-    margin-bottom:20px;
-}
-
-
-.final h2 span{
-
+.connect h2 span{
     color:var(--gold2);
 }
 
+.connect p{
 
-.final p{
+    color:#817d76;
 
-    max-width:650px;
+    max-width:600px;
 
-    margin:
-    0 auto 30px;
-
-    color:#85817a;
+    margin:auto;
 
     line-height:2;
 
-    direction:ltr;
+    font-size:13px;
 }
 
 
-/* =========================================================
+/* =========================================
    FOOTER
-========================================================= */
+========================================= */
 
 footer{
 
     padding:
-    70px 20px;
+    60px 20px;
 
     text-align:center;
 
@@ -1620,7 +725,6 @@ footer{
     color:#666;
 }
 
-
 .footer-logo{
 
     direction:rtl;
@@ -1629,152 +733,61 @@ footer{
     "Amiri",
     serif;
 
-    font-size:38px;
+    font-size:40px;
 
     color:var(--gold);
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
-
 
 footer p{
 
-    direction:ltr;
+    font-size:10px;
 
-    font-size:11px;
-
-    line-height:2;
+    letter-spacing:1px;
 }
 
 
-/* =========================================================
+/* =========================================
    MOBILE
-========================================================= */
+========================================= */
 
-@media(max-width:800px){
+@media(max-width:700px){
 
-    .nav{
+    nav{
 
         width:94%;
 
-        height:62px;
+        height:60px;
 
-        padding:
-        0 17px;
+        padding:0 17px;
     }
 
-
-    .nav-links{
-
-        display:none;
+    .logo{
+        font-size:29px;
     }
 
-
-    .nav-logo{
-
-        font-size:28px;
+    .back{
+        font-size:9px;
     }
-
 
     .hero{
-
+        min-height:52vh;
         padding-top:130px;
     }
 
-
-    .orbit{
-
-        width:430px;
-        height:430px;
-    }
-
-
-    .logo-stage{
-
-        transform:scale(.82);
-    }
-
-
-    .hero-title{
-
-        font-size:
-        clamp(42px,13vw,75px);
-    }
-
-
-    .hero-subtitle{
-
-        font-size:21px;
-    }
-
-
-    .hero-text{
-
-        font-size:13px;
-    }
-
-
-    .collection-grid{
-
+    .social-grid{
         grid-template-columns:1fr;
     }
 
-
-    .story{
-
-        grid-template-columns:1fr;
-
-        gap:40px;
+    .featured{
+        grid-column:span 1;
     }
 
-
-    .story-content .section-kicker{
-
-        text-align:center;
+    .social-card{
+        min-height:220px;
     }
 
-
-    .story-visual{
-
-        min-height:330px;
-    }
-
-
-    .chat-dock{
-
-        right:15px;
-        bottom:15px;
-    }
-
-
-    .chat-button{
-
-        width:48px;
-        height:48px;
-    }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:
-        .01ms !important;
-
-        animation-iteration-count:
-        1 !important;
-
-        scroll-behavior:
-        auto !important;
-    }
 }
 
 </style>
@@ -1785,766 +798,310 @@ footer p{
 <body>
 
 
-<!-- =====================================================
-     CINEMATIC OPENING
-===================================================== -->
+<!-- =========================================
+     NAV
+========================================= -->
 
-<div id="intro">
-
-    <div class="intro-light"></div>
-
-    <div class="logo-stage">
-
-        <div class="logo-ring"></div>
-
-        <!-- STATIC CROWN -->
-
-        <div class="crown">
-            ♛
-        </div>
-
-        <!-- ANIMATED DOUBLE-EDGED SWORD -->
-
-        <div class="sword"></div>
-
-        <!-- URDU CALLIGRAPHY: RAJA -->
-
-        <div class="calligraphy">
-            راجا
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<nav class="nav">
-
+<nav>
 
 <a href="index.html"
-   class="nav-logo">
+   class="logo">
 
 راجا
 
 </a>
 
+<a href="index.html"
+   class="back">
 
-<div class="nav-links">
+← BACK TO HOME
 
-<a href="#home">
-HOME
 </a>
-
-<a href="collection.html">
-COLLECTION
-</a>
-
-<a href="verify.html">
-AUTHENTICITY
-</a>
-
-<a href="#story">
-OUR STORY
-</a>
-
-</div>
-
-
-<select
-    class="language"
-    id="languageSelect"
-    onchange="changeLanguage()">
-
-    <option value="en">
-        EN
-    </option>
-
-    <option value="ur">
-        اردو
-    </option>
-
-    <option value="ar">
-        العربية
-    </option>
-
-</select>
-
 
 </nav>
 
 
-<!-- =====================================================
+<!-- =========================================
      HERO
-===================================================== -->
+========================================= -->
 
-<section class="hero"
-         id="home">
-
-
-<div class="orbit"></div>
-
+<section class="hero">
 
 <div class="hero-content">
 
-
 <div class="kicker">
-THE HOUSE OF RAJA
+CONNECT • FOLLOW • DISCOVER
 </div>
 
-
-<h1 class="hero-title">
-RAJA
+<h1>
+Raja Fida Hussain
 </h1>
 
-
-<h2 class="hero-subtitle"
-    id="heroSubtitle">
-
-Heritage. Craft. Identity.
-</h2>
-
-
-<p class="hero-text"
-   id="heroText">
-
-A personal luxury brand inspired by Pakistani heritage,
-crafted with character, and created for those who value
-authenticity, individuality and timeless style.
-
-</p>
-
-
-<div class="hero-buttons">
-
-
-<a href="collection.html"
-   class="btn btn-gold">
-
-EXPLORE COLLECTION
-
-</a>
-
-
-<a href="#assistant"
-   class="btn btn-dark">
-
-ASK RAJA AI
-
-</a>
-
-
+<div class="subtitle">
+Connect With Me
 </div>
 
+<p class="description">
+
+Follow my journey, discover my work, explore RAJA,
+and stay connected across my official social platforms.
+
+</p>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     PERSONAL BRAND
-===================================================== -->
+<!-- =========================================
+     SOCIAL PLATFORMS
+========================================= -->
 
-<section class="personal">
+<section class="social-section">
+
+<div class="social-grid">
 
 
-<div class="section-kicker">
-THE PERSONAL TOUCH
+<!-- WHATSAPP -->
+
+<div class="social-card featured">
+
+<div>
+
+<div class="icon">
+◉
 </div>
 
+<div class="platform">
 
 <h2>
-
-More Than A Store.
-<span>A Signature.</span>
-
+WhatsApp Channel
 </h2>
 
-
-<p id="personalText">
-
-RAJA is a personal brand built around heritage,
-craftsmanship and individuality. Every piece is
-selected with purpose, while customers can connect
-directly with the brand for guidance and assistance.
-
-</p>
-
-
-<div class="hero-buttons">
-
-
-<a href="#contact"
-   class="btn btn-gold">
-
-CHAT WITH RAJA
-
-</a>
-
-
-<a href="#assistant"
-   class="btn btn-dark">
-
-RAJA AI ASSISTANT
-
-</a>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     COLLECTION
-===================================================== -->
-
-<section class="section">
-
-
-<div class="section-kicker">
-THE COLLECTION
-</div>
-
-
-<h2 class="section-title">
-Two Levels. One Identity.
-</h2>
-
-
-<p class="section-text">
-
-Two carefully defined collections designed for
-different preferences, while maintaining the same
-RAJA standard of character and presentation.
-
-</p>
-
-
-<div class="collection-grid">
-
-
-<!-- STANDARD -->
-
-<div class="collection-card standard">
-
-
-<div class="collection-number">
-01 / STANDARD
-</div>
-
-
-<h3>
-STANDARD
-</h3>
-
-
 <p>
-
-Good materials, beautiful finishing, unique designs
-and an accessible price point for everyday elegance.
-
+Join the official channel for updates, announcements,
+new projects and exclusive content.
 </p>
 
+</div>
 
-<a href="collection.html"
-   class="btn btn-dark">
+</div>
 
-VIEW STANDARD
+<a
+href="https://whatsapp.com/channel/0029Vb8XD7y90x34UmoKRv0T"
+target="_blank"
+rel="noopener"
+class="follow">
+
+JOIN CHANNEL
 
 </a>
 
-
 </div>
 
 
-<!-- PREMIUM -->
+<!-- TIKTOK -->
 
-<div class="collection-card premium">
+<div class="social-card tiktok">
 
+<div>
 
-<div class="collection-number">
-02 / PREMIUM
+<div class="icon">
+♪ 
 </div>
 
-
-<h3>
-PREMIUM
-</h3>
-
-
-<p>
-
-Selected materials, skilled craftsmanship,
-high-end finishing, limited production and
-a unique identification number for every piece.
-
-</p>
-
-
-<a href="collection.html"
-   class="btn btn-gold">
-
-DISCOVER PREMIUM
-
-</a>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     OUR STORY
-===================================================== -->
-
-<section class="section"
-         id="story">
-
-
-<div class="story">
-
-
-<div class="story-visual">
-
-
-<div class="story-orbit"></div>
-
-
-<div class="story-logo">
-راجا
-</div>
-
-
-</div>
-
-
-<div class="story-content">
-
-
-<div class="section-kicker">
-OUR STORY
-</div>
-
+<div class="platform">
 
 <h2>
-Built With Meaning.
+TikTok
 </h2>
 
-
 <p>
-
-RAJA represents a connection between Pakistani
-heritage and modern luxury.
-
+Short videos, creative content and the latest moments
+from Raja Fida Hussain.
 </p>
 
+</div>
 
-<p>
+</div>
 
-The idea is simple: create pieces that have
-character, carry a story and feel personal to
-the person who owns them.
+<a
+href="https://www.tiktok.com/@rajafida77"
+target="_blank"
+rel="noopener"
+class="follow">
 
-</p>
-
-
-<a href="collection.html"
-   class="btn btn-dark">
-
-DISCOVER THE WORLD OF RAJA
+FOLLOW ON TIKTOK
 
 </a>
 
-
 </div>
 
 
+<!-- INSTAGRAM -->
+
+<div class="social-card instagram">
+
+<div>
+
+<div class="icon">
+◎
 </div>
 
-</section>
-
-
-<!-- =====================================================
-     AUTHENTICITY
-===================================================== -->
-
-<section class="section">
-
-
-<div class="assistant">
-
-
-<div class="assistant-icon">
-✓
-</div>
-
-
-<div class="section-kicker">
-AUTHENTICITY
-</div>
-
+<div class="platform">
 
 <h2>
-Own Something Genuine.
+Instagram
 </h2>
 
+<p>
+Discover photos, lifestyle, projects and visual stories.
+</p>
+
+</div>
+
+</div>
+
+<a
+href="https://www.instagram.com/fidahussain778866"
+target="_blank"
+rel="noopener"
+class="follow">
+
+FOLLOW ON INSTAGRAM
+
+</a>
+
+</div>
+
+
+<!-- FACEBOOK -->
+
+<div class="social-card facebook">
+
+<div>
+
+<div class="icon">
+f
+</div>
+
+<div class="platform">
+
+<h2>
+Facebook
+</h2>
+
+<p>
+Follow updates, announcements and the wider Raja community.
+</p>
+
+</div>
+
+</div>
+
+<a
+href="https://www.facebook.com/share/14k19iyM5fv/?mibextid=wwXIfr"
+target="_blank"
+rel="noopener"
+class="follow">
+
+FOLLOW ON FACEBOOK
+
+</a>
+
+</div>
+
+
+<!-- YOUTUBE -->
+
+<div class="social-card youtube">
+
+<div>
+
+<div class="icon">
+▶
+</div>
+
+<div class="platform">
+
+<h2>
+YouTube
+</h2>
+
+<p>
+Watch videos, stories, creative projects and long-form content.
+</p>
+
+</div>
+
+</div>
+
+<a
+href="https://youtube.com/@rajafida-v7n"
+target="_blank"
+rel="noopener"
+class="follow">
+
+SUBSCRIBE ON YOUTUBE
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FINAL
+========================================= -->
+
+<section class="connect">
+
+<div class="kicker">
+LET'S CONNECT
+</div>
+
+<h2>
+Follow The Journey.
+<span>Be Part Of It.</span>
+</h2>
 
 <p>
 
-Premium pieces can carry a unique identification
-number, allowing their authenticity to be checked
-through the official RAJA verification system.
+For collaborations, marketing, business opportunities
+or professional enquiries, connect through the official
+channels above.
 
 </p>
-
-
-<a href="verify.html"
-   class="btn btn-gold">
-
-VERIFY A PIECE
-
-</a>
-
-
-</div>
 
 </section>
 
 
-<!-- =====================================================
-     AI ASSISTANT
-===================================================== -->
-
-<section class="section"
-         id="assistant">
-
-
-<div class="assistant">
-
-
-<div class="assistant-icon">
-✦
-</div>
-
-
-<div class="section-kicker">
-INTELLIGENT ASSISTANCE
-</div>
-
-
-<h2>
-RAJA AI Assistant
-</h2>
-
-
-<p id="aiText">
-
-Ask about products, Standard and Premium collections,
-availability, authenticity or anything else about RAJA.
-
-</p>
-
-
-<!--
-=========================================================
-THIS BUTTON WILL BE CONNECTED TO THE REAL AI ASSISTANT
-IN THE NEXT DEVELOPMENT STEP.
-=========================================================
--->
-
-<a href="#"
-   class="btn btn-gold">
-
-START AI CHAT
-
-</a>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     DIRECT CONTACT
-===================================================== -->
-
-<section class="section"
-         id="contact">
-
-
-<div class="assistant">
-
-
-<div class="section-kicker">
-DIRECT CONNECTION
-</div>
-
-
-<h2>
-Talk Directly With RAJA.
-</h2>
-
-
-<p>
-
-Have a question, need help choosing a product,
-or want to discuss a special request?
-Connect directly with the brand.
-
-</p>
-
-
-<!--
-=========================================================
-YOUR REAL CHAT / WHATSAPP LINK WILL BE INSERTED HERE.
-=========================================================
--->
-
-<a href="#"
-   class="btn btn-gold">
-
-CHAT WITH RAJA
-
-</a>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FINAL CTA
-===================================================== -->
-
-<section class="final">
-
-
-<div class="section-kicker">
-WELCOME TO RAJA
-</div>
-
-
-<h2>
-
-Wear Your
-<span>Heritage.</span>
-
-</h2>
-
-
-<p>
-
-Discover pieces with character, craftsmanship
-and a story worth carrying.
-
-</p>
-
-
-<div class="hero-buttons">
-
-
-<a href="collection.html"
-   class="btn btn-gold">
-
-EXPLORE COLLECTION
-
-</a>
-
-
-<a href="verify.html"
-   class="btn btn-dark">
-
-AUTHENTICITY
-
-</a>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FLOATING CHAT BUTTONS
-===================================================== -->
-
-<div class="chat-dock">
-
-
-<a href="#assistant"
-   class="chat-button"
-   title="RAJA AI">
-
-✦
-
-</a>
-
-
-<a href="#contact"
-   class="chat-button"
-   title="Chat With RAJA">
-
-◈
-
-</a>
-
-
-</div>
-
-
-<!-- =====================================================
+<!-- =========================================
      FOOTER
-===================================================== -->
+========================================= -->
 
 <footer>
-
 
 <div class="footer-logo">
 راجا
 </div>
 
-
 <p>
-RAJA • Heritage • Craft • Identity
+Raja Fida Hussain • Official Social Hub
 </p>
 
-
 <br>
-
 
 <p>
 © 2026 RAJA. All Rights Reserved.
 </p>
 
-
 </footer>
 
 
-<!-- =====================================================
-     LANGUAGE SCRIPT
-===================================================== -->
-
-<script>
-
-function changeLanguage(){
-
-    const language =
-    document.getElementById(
-        "languageSelect"
-    ).value;
-
-
-    const heroSubtitle =
-    document.getElementById(
-        "heroSubtitle"
-    );
-
-    const heroText =
-    document.getElementById(
-        "heroText"
-    );
-
-    const personalText =
-    document.getElementById(
-        "personalText"
-    );
-
-    const aiText =
-    document.getElementById(
-        "aiText"
-    );
-
-
-    if(language === "ur"){
-
-        document.documentElement.lang = "ur";
-
-        document.documentElement.dir = "rtl";
-
-
-        heroSubtitle.innerText =
-        "ورثہ، ہنر اور شناخت";
-
-
-        heroText.innerText =
-        "پاکستانی ورثے سے متاثر ایک ذاتی اعلیٰ معیار کا برانڈ، جہاں ہر انتخاب اپنی شناخت، کردار اور اصلیت رکھتا ہے۔";
-
-
-        personalText.innerText =
-        "راجا ایک ذاتی برانڈ ہے جو ورثے، دستکاری اور انفرادیت کو اہمیت دیتا ہے۔ ہر شے سوچ سمجھ کر منتخب کی جاتی ہے اور گاہک براہِ راست برانڈ سے رابطہ کر سکتے ہیں۔";
-
-
-        aiText.innerText =
-        "مصنوعات، معیار، دستیابی، اصلیت یا راجا کے بارے میں کوئی بھی سوال پوچھیں۔";
-
-    }
-
-
-    else if(language === "ar"){
-
-        document.documentElement.lang = "ar";
-
-        document.documentElement.dir = "rtl";
-
-
-        heroSubtitle.innerText =
-        "التراث، الحرفية والهوية";
-
-
-        heroText.innerText =
-        "علامة شخصية فاخرة مستوحاة من التراث الباكستاني، حيث تحمل كل قطعة طابعاً خاصاً وأصالة وهوية مميزة.";
-
-
-        personalText.innerText =
-        "راجا علامة شخصية تهتم بالتراث والحرفية والتميز. يتم اختيار كل قطعة بعناية، ويمكن للعملاء التواصل مباشرة مع العلامة.";
-
-
-        aiText.innerText =
-        "اسأل عن المنتجات أو المجموعات أو التوفر أو الأصالة أو أي شيء يتعلق بعلامة راجا.";
-
-    }
-
-
-    else{
-
-        document.documentElement.lang = "en";
-
-        document.documentElement.dir = "ltr";
-
-
-        heroSubtitle.innerText =
-        "Heritage. Craft. Identity.";
-
-
-        heroText.innerText =
-        "A personal luxury brand inspired by Pakistani heritage, crafted with character, and created for those who value authenticity, individuality and timeless style.";
-
-
-        personalText.innerText =
-        "RAJA is a personal brand built around heritage, craftsmanship and individuality. Every piece is selected with purpose, while customers can connect directly with the brand for guidance and assistance.";
-
-
-        aiText.innerText =
-        "Ask about products, Standard and Premium collections, availability, authenticity or anything else about RAJA.";
-
-    }
-
-}
-
-</script>
-
-
 </body>
-
 </html>
