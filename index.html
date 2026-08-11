@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RajaFida | Heritage • Luxury • Personal</title>
+<title>RAJA | Heritage Reimagined</title>
 
 <style>
 
-/* =====================================================
+/* =========================================================
+   RAJA — HIGH PREMIUM LANDING PAGE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;500;600;700&display=swap');
+
+
+:root{
+
+    --black:#030303;
+    --black2:#080706;
+
+    --gold:#d6b45a;
+    --gold2:#f4df9a;
+    --gold3:#8e6d29;
+
+    --cream:#f5ead0;
+
+    --muted:#99938a;
+
+    --line:rgba(214,180,90,.20);
+}
+
+
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
 *{
     margin:0;
@@ -25,400 +49,720 @@ html{
 }
 
 body{
-    background:#030303;
-    color:#fff;
-    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+    radial-gradient(
+        circle at 50% 15%,
+        #211a0c 0%,
+        #090806 27%,
+        #030303 65%
+    );
+
+    color:white;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
     overflow-x:hidden;
 }
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
+
+/* =========================================================
+   PREMIUM AMBIENT LIGHT
+========================================================= */
 
 body::before{
+
     content:"";
+
     position:fixed;
-    width:520px;
-    height:520px;
+
+    width:600px;
+    height:600px;
+
     border-radius:50%;
-    background:#d4af37;
-    filter:blur(180px);
-    opacity:.04;
-    top:-280px;
-    left:-240px;
-    pointer-events:none;
-    z-index:-10;
-}
 
-body::after{
-    content:"";
-    position:fixed;
-    width:450px;
-    height:450px;
-    border-radius:50%;
-    background:#8d6915;
-    filter:blur(170px);
-    opacity:.03;
-    right:-230px;
-    bottom:-200px;
-    pointer-events:none;
-    z-index:-10;
-}
+    background:
+    radial-gradient(
+        circle,
+        rgba(214,180,90,.12),
+        transparent 68%
+    );
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-nav{
-    position:fixed;
-    top:18px;
+    top:-350px;
     left:50%;
+
     transform:translateX(-50%);
 
-    width:92%;
-    max-width:1250px;
+    pointer-events:none;
 
-    min-height:70px;
+    z-index:-5;
 
-    padding:8px 25px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    background:rgba(7,7,7,.80);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(212,175,55,.18);
-
-    border-radius:60px;
-
-    z-index:1000;
-
-    box-shadow:
-    0 10px 50px rgba(0,0,0,.3);
+    animation:
+    ambient 7s ease-in-out infinite;
 }
 
-/* =====================================================
-   RAJA LOGO
-   CROWN STATIC
-   SWORD ANIMATED
-===================================================== */
 
-.brand-logo{
-    position:relative;
+@keyframes ambient{
 
-    width:115px;
-    height:68px;
+    0%,100%{
+        opacity:.55;
+        transform:
+        translateX(-50%)
+        scale(1);
+    }
+
+    50%{
+        opacity:1;
+        transform:
+        translateX(-50%)
+        scale(1.18);
+    }
+}
+
+
+/* =========================================================
+   OPENING / INTRO
+========================================================= */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#020202;
+
+    z-index:99999;
 
     display:flex;
-    flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
 
-    direction:ltr;
+    overflow:hidden;
 
-    color:#d4af37;
+    animation:
+    introFade 1.2s ease 3.4s forwards;
 }
+
+
+@keyframes introFade{
+
+    to{
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+    }
+}
+
+
+.intro-light{
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(214,180,90,.20),
+        transparent 70%
+    );
+
+    filter:blur(30px);
+
+    animation:
+    introLight 2.5s ease forwards;
+}
+
+
+@keyframes introLight{
+
+    from{
+        transform:scale(.2);
+        opacity:0;
+    }
+
+    50%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    to{
+        transform:scale(1.5);
+        opacity:.4;
+    }
+}
+
+
+/* =========================================================
+   CALLIGRAPHY LOGO
+========================================================= */
+
+.logo-stage{
+
+    position:relative;
+
+    width:280px;
+    height:280px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    animation:
+    logoEnter 2.1s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+
+@keyframes logoEnter{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        scale(.25)
+        translateY(80px)
+        rotate(-10deg);
+
+        filter:
+        blur(12px);
+    }
+
+    55%{
+
+        opacity:1;
+
+        transform:
+        scale(1.08)
+        translateY(0)
+        rotate(2deg);
+
+        filter:
+        blur(0);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0)
+        rotate(0);
+    }
+}
+
+
+/* OUTER ROYAL RING */
+
+.logo-ring{
+
+    position:absolute;
+
+    width:245px;
+    height:245px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(214,180,90,.45);
+
+    box-shadow:
+    0 0 35px rgba(214,180,90,.10),
+    inset 0 0 35px rgba(214,180,90,.05);
+
+    animation:
+    ringSpin 14s linear infinite;
+}
+
+
+.logo-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:50%;
+
+    border:
+    1px dashed
+    rgba(214,180,90,.25);
+}
+
+
+@keyframes ringSpin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
 
 /* STATIC CROWN */
 
 .crown{
+
     position:absolute;
-    top:-3px;
 
-    font-size:23px;
-    line-height:1;
+    top:28px;
 
-    color:#d4af37;
+    z-index:8;
 
-    z-index:5;
+    font-size:40px;
+
+    color:var(--gold2);
+
+    filter:
+    drop-shadow(
+        0 0 12px
+        rgba(214,180,90,.55)
+    );
+
+    /* Crown intentionally has NO animation */
 }
 
-/* RAJA ONLY */
 
-.raja-text{
+/* =========================================================
+   URDU CALLIGRAPHY
+========================================================= */
+
+.calligraphy{
+
     position:relative;
 
-    margin-top:15px;
+    z-index:7;
+
+    direction:rtl;
 
     font-family:
-    Georgia,
-    "Times New Roman",
+    "Amiri",
+    "Noto Naskh Arabic",
     serif;
 
-    font-size:22px;
-    font-weight:bold;
+    font-size:74px;
 
-    letter-spacing:3px;
+    font-weight:700;
 
-    color:#d4af37;
-
-    z-index:4;
-
-    text-shadow:
-    0 0 15px rgba(212,175,55,.18);
-}
-
-/* =====================================================
-   DOUBLE EDGED SWORD
-===================================================== */
-
-.sword-logo{
-    position:absolute;
-
-    top:10px;
-    left:50%;
-
-    width:3px;
-    height:47px;
-
-    transform:
-    translateX(-50%)
-    rotate(42deg);
-
-    z-index:2;
-
-    animation:
-    swordMove 2.8s ease-in-out infinite;
-}
-
-@keyframes swordMove{
-
-    0%,100%{
-        transform:
-        translateX(-50%)
-        rotate(42deg)
-        scaleY(1);
-
-        filter:
-        drop-shadow(
-        0 0 0
-        rgba(212,175,55,0)
-        );
-    }
-
-    50%{
-        transform:
-        translateX(-50%)
-        rotate(42deg)
-        scaleY(1.12);
-
-        filter:
-        drop-shadow(
-        0 0 10px
-        rgba(212,175,55,.85)
-        );
-    }
-}
-
-.sword-line{
-    position:absolute;
-
-    left:0;
-    top:0;
-
-    width:3px;
-    height:38px;
+    color:transparent;
 
     background:
     linear-gradient(
-        to bottom,
+        120deg,
+        #8f6b25,
+        #fff1b1,
+        #d6b45a,
+        #fff3b8,
+        #8f6b25
+    );
+
+    background-size:300% 100%;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    filter:
+    drop-shadow(
+        0 0 18px
+        rgba(214,180,90,.35)
+    );
+
+    animation:
+    goldFlow 5s ease-in-out infinite;
+}
+
+
+@keyframes goldFlow{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+
+/* =========================================================
+   DOUBLE EDGED SWORD
+========================================================= */
+
+.sword{
+
+    position:absolute;
+
+    z-index:5;
+
+    width:150px;
+
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
         transparent,
-        #b28a20 15%,
-        #fff2ad 50%,
-        #d4af37 82%,
+        #fff3b8 25%,
+        #d6b45a 55%,
         transparent
     );
 
+    transform:
+    rotate(-42deg)
+    translateX(-5px);
+
+    border-radius:100%;
+
     box-shadow:
-    0 0 8px rgba(212,175,55,.5);
+    0 0 12px
+    rgba(214,180,90,.75);
+
+    animation:
+    swordSweep 2.8s ease-in-out infinite;
 }
 
-.sword-line::before,
-.sword-line::after{
+
+.sword::before{
 
     content:"";
 
     position:absolute;
 
-    left:50%;
+    right:-3px;
 
-    width:9px;
-    height:9px;
-
-    border-left:1px solid #d4af37;
-    border-top:1px solid #d4af37;
-
-    transform:translateX(-50%);
-}
-
-.sword-line::before{
-    top:-1px;
-
-    transform:
-    translateX(-50%)
-    rotate(45deg);
-}
-
-.sword-line::after{
-    bottom:-1px;
-
-    transform:
-    translateX(-50%)
-    rotate(225deg);
-}
-
-.sword-handle{
-    position:absolute;
-
-    left:-6px;
-    bottom:0;
+    top:-5px;
 
     width:15px;
-    height:3px;
+    height:15px;
 
-    border-radius:5px;
+    border-top:
+    2px solid
+    var(--gold2);
 
-    background:#d4af37;
+    border-right:
+    2px solid
+    var(--gold2);
 
-    box-shadow:
-    0 0 9px rgba(212,175,55,.45);
+    transform:rotate(45deg);
 }
 
-/* =====================================================
-   NAV LINKS
-===================================================== */
+
+.sword::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:8px;
+
+    top:-5px;
+
+    width:20px;
+    height:15px;
+
+    border:
+    2px solid
+    var(--gold);
+
+    border-radius:50%;
+}
+
+
+@keyframes swordSweep{
+
+    0%,100%{
+
+        transform:
+        rotate(-42deg)
+        translateX(-5px)
+        scaleX(.88);
+
+        opacity:.7;
+    }
+
+    50%{
+
+        transform:
+        rotate(-42deg)
+        translateX(20px)
+        scaleX(1.05);
+
+        opacity:1;
+
+        filter:
+        drop-shadow(
+            0 0 18px
+            rgba(214,180,90,.9)
+        );
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.nav{
+
+    position:fixed;
+
+    top:22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:92%;
+
+    max-width:1250px;
+
+    height:72px;
+
+    padding:0 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    z-index:1000;
+
+    border:
+    1px solid
+    rgba(214,180,90,.16);
+
+    border-radius:50px;
+
+    background:
+    rgba(3,3,3,.72);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 15px 50px
+    rgba(0,0,0,.35);
+}
+
+
+/* SMALL NAV LOGO */
+
+.nav-logo{
+
+    direction:rtl;
+
+    font-family:
+    "Amiri",
+    serif;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:var(--gold2);
+
+    text-decoration:none;
+
+    text-shadow:
+    0 0 15px
+    rgba(214,180,90,.25);
+}
+
 
 .nav-links{
+
     display:flex;
-    gap:27px;
+
+    gap:30px;
+
     direction:ltr;
 }
 
+
 .nav-links a{
-    color:#999;
+
+    color:#aaa;
+
     text-decoration:none;
 
     font-size:10px;
-    letter-spacing:1.5px;
+
+    letter-spacing:1.7px;
 
     transition:.35s;
 }
 
+
 .nav-links a:hover{
-    color:#d4af37;
+
+    color:var(--gold2);
 
     text-shadow:
-    0 0 12px rgba(212,175,55,.35);
+    0 0 12px
+    rgba(214,180,90,.4);
 }
 
-/* =====================================================
+
+/* LANGUAGE */
+
+.language{
+
+    direction:ltr;
+
+    color:#aaa;
+
+    background:transparent;
+
+    border:
+    1px solid
+    rgba(214,180,90,.25);
+
+    padding:
+    8px 12px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    cursor:pointer;
+}
+
+
+.language option{
+
+    background:#080808;
+
+    color:white;
+}
+
+
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero{
+
     min-height:100vh;
 
+    position:relative;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
 
     padding:
-    155px 20px 100px;
+    150px 20px 90px;
 
-    position:relative;
     overflow:hidden;
-
-    background:
-    radial-gradient(
-        circle at center,
-        #251d08 0%,
-        #0a0803 30%,
-        #030303 72%
-    );
 }
 
-.hero-ring{
+
+/* GOLD ORBIT */
+
+.orbit{
+
     position:absolute;
 
-    width:620px;
-    height:620px;
+    width:720px;
+    height:720px;
 
     border-radius:50%;
 
     border:
-    1px solid rgba(212,175,55,.08);
+    1px solid
+    rgba(214,180,90,.06);
 
     animation:
-    heroSpin 32s linear infinite;
+    orbitSpin 35s linear infinite;
 }
 
-.hero-ring::before{
+
+.orbit::before{
+
     content:"";
 
     position:absolute;
 
-    inset:75px;
+    inset:100px;
 
     border-radius:50%;
 
     border:
-    1px dashed rgba(212,175,55,.07);
-
-    animation:
-    heroReverse 20s linear infinite;
+    1px solid
+    rgba(214,180,90,.045);
 }
 
-.hero-ring::after{
+
+.orbit::after{
+
     content:"";
 
     position:absolute;
 
-    inset:155px;
+    inset:200px;
 
     border-radius:50%;
 
     border:
-    1px solid rgba(212,175,55,.05);
+    1px dashed
+    rgba(214,180,90,.04);
 }
 
-@keyframes heroSpin{
-    from{
-        transform:rotate(0deg);
-    }
+
+@keyframes orbitSpin{
 
     to{
         transform:rotate(360deg);
     }
 }
 
-@keyframes heroReverse{
-    from{
-        transform:rotate(360deg);
-    }
 
-    to{
-        transform:rotate(0deg);
-    }
-}
+/* HERO CONTENT */
 
 .hero-content{
+
     position:relative;
-    z-index:3;
+
+    z-index:10;
+
+    max-width:900px;
 
     animation:
-    heroEnter 1.2s ease both;
+    heroReveal 1.4s ease 3.5s both;
 }
 
-@keyframes heroEnter{
+
+@keyframes heroReveal{
+
     from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(35px);
     }
 
     to{
@@ -427,248 +771,300 @@ nav{
     }
 }
 
-.eyebrow{
+
+.kicker{
+
     direction:ltr;
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-size:10px;
 
     letter-spacing:7px;
 
-    margin-bottom:28px;
+    margin-bottom:25px;
 }
 
-.hero h1{
+
+.hero-title{
+
+    direction:ltr;
+
+    font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+    font-size:
+    clamp(48px,9vw,105px);
+
+    letter-spacing:
+    clamp(5px,1vw,12px);
+
+    font-weight:500;
+
+    line-height:1;
+
+    margin-bottom:25px;
+
+    background:
+    linear-gradient(
+        110deg,
+        #8f6b25,
+        #fff2ae,
+        #d6b45a,
+        #fff2ae,
+        #8f6b25
+    );
+
+    background-size:250% auto;
+
+    color:transparent;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    animation:
+    titleGold 6s linear infinite;
+}
+
+
+@keyframes titleGold{
+
+    to{
+        background-position:
+        250% center;
+    }
+}
+
+
+.hero-subtitle{
+
     direction:ltr;
 
     font-family:
     Georgia,
-    "Times New Roman",
     serif;
 
     font-size:
-    clamp(55px,11vw,130px);
+    clamp(20px,3vw,31px);
 
-    line-height:.9;
+    color:#e8dfcd;
 
-    letter-spacing:9px;
-
-    color:#d4af37;
-
-    margin-bottom:30px;
-
-    animation:
-    goldBreath 4s ease-in-out infinite;
-}
-
-@keyframes goldBreath{
-
-    0%,100%{
-        text-shadow:
-        0 0 20px rgba(212,175,55,.08);
-    }
-
-    50%{
-        text-shadow:
-        0 0 65px rgba(212,175,55,.22);
-    }
-}
-
-.hero h2{
-    font-size:
-    clamp(24px,4vw,42px);
-
-    font-weight:300;
+    font-weight:400;
 
     margin-bottom:22px;
 }
 
-.hero p{
-    max-width:720px;
+
+.hero-text{
+
+    max-width:650px;
 
     margin:auto;
 
-    color:#888;
+    color:#8f8b84;
+
+    font-size:14px;
 
     line-height:2;
 
-    font-size:14px;
+    direction:ltr;
 }
 
-/* =====================================================
-   BUTTONS
-===================================================== */
 
-.buttons{
-    margin-top:38px;
+/* =========================================================
+   CTA
+========================================================= */
+
+.hero-buttons{
 
     display:flex;
+
     justify-content:center;
-    align-items:center;
 
     gap:14px;
 
     flex-wrap:wrap;
+
+    margin-top:38px;
 }
 
+
 .btn{
-    display:inline-block;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:165px;
 
     padding:
-    14px 27px;
+    15px 25px;
 
-    border-radius:40px;
+    border-radius:50px;
 
     text-decoration:none;
 
     font-size:10px;
 
-    letter-spacing:1px;
+    letter-spacing:1.4px;
 
     direction:ltr;
 
     transition:.4s;
+
+    cursor:pointer;
 }
+
 
 .btn-gold{
-    background:#d4af37;
-    color:#000;
-}
 
-.btn-gold:hover{
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 14px 40px
-    rgba(212,175,55,.22);
-}
-
-.btn-outline{
-    color:#ccc;
-
-    border:
-    1px solid #555;
-}
-
-.btn-outline:hover{
-    color:#d4af37;
-
-    border-color:#d4af37;
-}
-
-/* =====================================================
-   QUICK ACTIONS
-===================================================== */
-
-.quick-actions{
-
-    max-width:1100px;
-
-    margin:
-    -55px auto 0;
-
-    padding:
-    0 25px;
-
-    position:relative;
-
-    z-index:10;
-}
-
-.quick-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:15px;
-}
-
-.quick-card{
-
-    padding:25px 20px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    color:#fff;
+    color:#080705;
 
     background:
-    rgba(15,15,15,.9);
+    linear-gradient(
+        120deg,
+        #9b772c,
+        #f4df9a,
+        #c49b3b
+    );
+
+    box-shadow:
+    0 10px 35px
+    rgba(214,180,90,.14);
+}
+
+
+.btn-gold:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 18px 50px
+    rgba(214,180,90,.28);
+}
+
+
+.btn-dark{
+
+    color:#ddd;
 
     border:
     1px solid
-    rgba(212,175,55,.15);
+    rgba(214,180,90,.35);
 
-    backdrop-filter:blur(12px);
-
-    transition:.4s;
+    background:
+    rgba(255,255,255,.025);
 }
 
-.quick-card:hover{
+
+.btn-dark:hover{
+
+    color:var(--gold2);
+
+    border-color:var(--gold);
 
     transform:
-    translateY(-7px);
-
-    border-color:
-    rgba(212,175,55,.55);
+    translateY(-5px);
 }
 
-.quick-icon{
 
-    font-size:25px;
+/* =========================================================
+   FLOATING CHAT
+========================================================= */
 
-    margin-bottom:10px;
+.chat-dock{
 
-    color:#d4af37;
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    z-index:900;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
 }
 
-.quick-title{
 
-    direction:ltr;
+.chat-button{
 
-    font-size:12px;
+    width:54px;
+    height:54px;
 
-    letter-spacing:1px;
+    border-radius:50%;
 
-    margin-bottom:7px;
+    border:
+    1px solid
+    rgba(214,180,90,.45);
+
+    background:
+    rgba(8,8,8,.92);
+
+    color:var(--gold2);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:19px;
+
+    box-shadow:
+    0 8px 35px
+    rgba(0,0,0,.45);
+
+    transition:.35s;
 }
 
-.quick-text{
 
-    color:#777;
+.chat-button:hover{
 
-    font-size:11px;
+    transform:
+    scale(1.1);
 
-    line-height:1.7;
+    background:#15120a;
+
+    box-shadow:
+    0 0 30px
+    rgba(214,180,90,.2);
 }
 
-/* =====================================================
+
+/* =========================================================
    SECTION
-===================================================== */
+========================================================= */
 
 .section{
 
-    max-width:1250px;
+    max-width:1200px;
 
     margin:auto;
 
     padding:
-    115px 6%;
+    120px 6%;
 }
 
-.section-label{
 
-    direction:ltr;
+.section-kicker{
 
     text-align:center;
 
-    color:#d4af37;
+    direction:ltr;
+
+    color:var(--gold);
 
     font-size:9px;
 
@@ -677,299 +1073,252 @@ nav{
     margin-bottom:18px;
 }
 
+
 .section-title{
 
     text-align:center;
 
-    font-size:
-    clamp(35px,6vw,60px);
+    direction:ltr;
 
-    margin-bottom:18px;
+    font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+    font-size:
+    clamp(34px,5vw,58px);
+
+    font-weight:500;
+
+    margin-bottom:20px;
 }
 
-.section-description{
 
-    max-width:720px;
+.section-text{
+
+    max-width:700px;
 
     margin:
-    0 auto 65px;
+    0 auto 60px;
 
     text-align:center;
 
-    color:#777;
+    color:#85817a;
 
     line-height:2;
+
+    font-size:14px;
+
+    direction:ltr;
 }
 
-/* =====================================================
-   STANDARD + PREMIUM
-===================================================== */
 
-.quality-grid{
+/* =========================================================
+   COLLECTION PREVIEW
+========================================================= */
+
+.collection-grid{
 
     display:grid;
 
     grid-template-columns:
-    repeat(2,1fr);
+    1fr 1fr;
 
-    gap:22px;
+    gap:20px;
 }
 
-.quality-card{
+
+.collection-card{
 
     min-height:390px;
 
-    padding:38px;
+    border-radius:30px;
 
-    border-radius:28px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.08);
+    padding:40px;
 
     position:relative;
 
     overflow:hidden;
 
+    border:
+    1px solid
+    rgba(214,180,90,.13);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
     transition:.5s;
 }
 
-.quality-card:hover{
+
+.collection-card:hover{
 
     transform:
-    translateY(-10px);
+    translateY(-9px);
+
+    border-color:
+    rgba(214,180,90,.4);
 }
 
-.standard-card{
 
-    background:
-    linear-gradient(
-        145deg,
-        rgba(30,55,70,.35),
-        rgba(7,10,12,.9)
-    );
-}
-
-.premium-card{
+.standard{
 
     background:
     radial-gradient(
-        circle at top right,
-        #49360a,
-        #090805 55%,
-        #040404
+        circle at 75% 20%,
+        #26323a,
+        #0b0d0e 45%,
+        #050505 75%
     );
-
-    border-color:
-    rgba(212,175,55,.4);
-
-    animation:
-    premiumGlow 4s ease-in-out infinite;
 }
 
-@keyframes premiumGlow{
 
-    0%,100%{
-        box-shadow:
-        0 0 15px
-        rgba(212,175,55,.02);
-    }
+.premium{
 
-    50%{
-        box-shadow:
-        0 0 45px
-        rgba(212,175,55,.1);
-    }
+    background:
+    radial-gradient(
+        circle at 75% 20%,
+        #4a370d,
+        #100d05 42%,
+        #040404 75%
+    );
 }
 
-.card-number{
+
+.collection-number{
+
+    position:absolute;
+
+    top:30px;
+    left:35px;
 
     direction:ltr;
 
-    color:#555;
+    font-size:9px;
 
-    font-size:10px;
+    letter-spacing:3px;
 
-    letter-spacing:2px;
-
-    margin-bottom:25px;
+    color:#777;
 }
 
-.card-title{
+
+.collection-card h3{
 
     direction:ltr;
 
-    font-size:30px;
+    font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+    font-size:
+    clamp(30px,4vw,48px);
 
     margin-bottom:10px;
 }
 
-.standard-card .card-title{
-    color:#78b8e8;
+
+.standard h3{
+    color:#c9e2ed;
 }
 
-.premium-card .card-title{
-    color:#d4af37;
+
+.premium h3{
+    color:var(--gold2);
 }
 
-.card-urdu{
 
-    color:#aaa;
+.collection-card p{
 
-    font-size:16px;
+    max-width:480px;
 
-    margin-bottom:25px;
-}
-
-.card-text{
-
-    color:#888;
+    color:#85817a;
 
     line-height:2;
 
     font-size:13px;
 
+    direction:ltr;
+
     margin-bottom:25px;
 }
 
-.card-link{
 
-    direction:ltr;
-
-    color:#d4af37;
-
-    text-decoration:none;
-
-    font-size:10px;
-
-    letter-spacing:1px;
-}
-
-/* =====================================================
+/* =========================================================
    PERSONAL BRAND
-===================================================== */
+========================================================= */
 
 .personal{
 
     max-width:1050px;
 
     margin:
-    30px auto 115px;
+    0 auto 120px;
 
     padding:
-    80px 35px;
+    85px 35px;
 
     text-align:center;
 
-    border-radius:32px;
+    border-radius:35px;
 
     border:
     1px solid
-    rgba(212,175,55,.25);
+    rgba(214,180,90,.20);
 
     background:
-    radial-gradient(
-        circle at center,
-        rgba(212,175,55,.08),
-        rgba(255,255,255,.01) 65%
+    linear-gradient(
+        145deg,
+        rgba(214,180,90,.08),
+        rgba(255,255,255,.015)
     );
-
-    position:relative;
-
-    overflow:hidden;
 }
+
 
 .personal h2{
-
-    font-size:
-    clamp(34px,6vw,60px);
-
-    margin-bottom:22px;
-}
-
-.personal h2 span{
-
-    color:#d4af37;
-}
-
-.personal p{
-
-    max-width:700px;
-
-    margin:auto;
-
-    color:#888;
-
-    line-height:2.2;
-}
-
-/* =====================================================
-   LIMITED PREMIUM
-===================================================== */
-
-.limited{
-
-    max-width:1050px;
-
-    margin:
-    30px auto 115px;
-
-    padding:
-    75px 35px;
-
-    text-align:center;
-
-    border-radius:32px;
-
-    border:
-    1px solid
-    rgba(212,175,55,.3);
-
-    background:
-    radial-gradient(
-        circle at center,
-        rgba(212,175,55,.1),
-        rgba(255,255,255,.01) 60%
-    );
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.limited h2{
 
     direction:ltr;
 
     font-family:
+    "Cinzel",
     Georgia,
-    "Times New Roman",
     serif;
 
     font-size:
-    clamp(35px,6vw,65px);
+    clamp(34px,5vw,55px);
 
-    color:#d4af37;
-
-    letter-spacing:4px;
+    font-weight:500;
 
     margin-bottom:20px;
 }
 
-.limited p{
+
+.personal h2 span{
+
+    color:var(--gold2);
+}
+
+
+.personal p{
 
     max-width:680px;
 
     margin:auto;
 
-    color:#888;
+    color:#85817a;
 
     line-height:2;
+
+    direction:ltr;
 }
 
-/* =====================================================
+
+/* =========================================================
    STORY
-===================================================== */
+========================================================= */
 
 .story{
 
@@ -978,26 +1327,28 @@ nav{
     grid-template-columns:
     1fr 1fr;
 
-    gap:55px;
+    gap:70px;
 
     align-items:center;
 }
 
-.story-box{
 
-    min-height:400px;
+.story-visual{
 
-    border-radius:30px;
+    min-height:450px;
+
+    border-radius:35px;
 
     border:
     1px solid
-    rgba(212,175,55,.15);
+    rgba(214,180,90,.17);
 
     background:
-    linear-gradient(
-        145deg,
-        #171205,
-        #060606
+    radial-gradient(
+        circle,
+        #30240b,
+        #0b0905 48%,
+        #040404 75%
     );
 
     display:flex;
@@ -1011,37 +1362,124 @@ nav{
     overflow:hidden;
 }
 
-.story-box::before{
 
-    content:"";
+.story-orbit{
 
     position:absolute;
 
-    width:280px;
-
-    height:280px;
+    width:330px;
+    height:330px;
 
     border-radius:50%;
 
     border:
     1px solid
-    rgba(212,175,55,.1);
+    rgba(214,180,90,.18);
 
     animation:
-    heroSpin 18s linear infinite;
+    orbitSpin 20s linear infinite;
 }
 
-.story-circle{
 
-    width:230px;
+.story-logo{
 
-    height:230px;
+    position:relative;
 
-    border-radius:50%;
+    z-index:2;
+
+    direction:rtl;
+
+    font-family:
+    "Amiri",
+    serif;
+
+    font-size:65px;
+
+    color:var(--gold2);
+
+    text-shadow:
+    0 0 25px
+    rgba(214,180,90,.3);
+}
+
+
+.story-content .section-kicker{
+
+    text-align:left;
+}
+
+
+.story-content h2{
+
+    direction:ltr;
+
+    font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+    font-size:
+    clamp(35px,5vw,58px);
+
+    font-weight:500;
+
+    margin-bottom:25px;
+}
+
+
+.story-content p{
+
+    direction:ltr;
+
+    color:#85817a;
+
+    line-height:2.2;
+
+    margin-bottom:18px;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   AI / CHAT AREA
+========================================================= */
+
+.assistant{
+
+    max-width:900px;
+
+    margin:auto;
 
     border:
     1px solid
-    rgba(212,175,55,.3);
+    rgba(214,180,90,.18);
+
+    border-radius:30px;
+
+    padding:
+    50px 30px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.018);
+
+    box-shadow:
+    0 30px 100px
+    rgba(0,0,0,.25);
+}
+
+
+.assistant-icon{
+
+    width:70px;
+    height:70px;
+
+    margin:
+    0 auto 20px;
+
+    border-radius:50%;
 
     display:flex;
 
@@ -1049,254 +1487,278 @@ nav{
 
     justify-content:center;
 
-    color:#d4af37;
-
-    font-size:25px;
-
-    letter-spacing:4px;
-
-    direction:ltr;
-
-    z-index:2;
-}
-
-.story-content h2{
-
-    font-size:
-    clamp(35px,5vw,55px);
-
-    margin-bottom:25px;
-}
-
-.story-content p{
-
-    color:#888;
-
-    line-height:2.2;
-
-    margin-bottom:20px;
-
-    font-size:14px;
-}
-
-/* =====================================================
-   AUTHENTICITY
-===================================================== */
-
-.auth-box{
-
-    max-width:850px;
-
-    margin:
-    0 auto;
-
-    padding:
-    55px 30px;
-
-    text-align:center;
-
-    border-radius:28px;
+    color:var(--gold2);
 
     border:
     1px solid
-    rgba(212,175,55,.22);
+    rgba(214,180,90,.4);
 
-    background:
-    linear-gradient(
-        145deg,
-        #111,
-        #060606
-    );
+    box-shadow:
+    0 0 35px
+    rgba(214,180,90,.12);
+
+    animation:
+    aiPulse 3s ease-in-out infinite;
 }
 
-.auth-box h2{
 
-    font-size:
-    clamp(30px,5vw,50px);
+@keyframes aiPulse{
 
-    margin-bottom:18px;
+    0%,100%{
+        box-shadow:
+        0 0 20px
+        rgba(214,180,90,.08);
+    }
+
+    50%{
+        box-shadow:
+        0 0 45px
+        rgba(214,180,90,.25);
+    }
 }
 
-.auth-box p{
 
-    color:#777;
+.assistant h2{
 
-    line-height:2;
+    direction:ltr;
+
+    font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+    font-weight:500;
+
+    font-size:35px;
+
+    margin-bottom:15px;
+}
+
+
+.assistant p{
 
     max-width:650px;
 
     margin:
     0 auto 25px;
+
+    color:#85817a;
+
+    line-height:2;
+
+    direction:ltr;
 }
 
-/* =====================================================
-   FINAL CTA
-===================================================== */
+
+/* =========================================================
+   FINAL
+========================================================= */
 
 .final{
 
     text-align:center;
 
     padding:
-    125px 20px;
+    130px 20px;
 }
+
 
 .final h2{
 
+    direction:ltr;
+
+    font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
     font-size:
-    clamp(38px,7vw,75px);
+    clamp(40px,7vw,78px);
+
+    font-weight:500;
 
     margin-bottom:20px;
 }
 
+
 .final h2 span{
-    color:#d4af37;
+
+    color:var(--gold2);
 }
+
 
 .final p{
 
-    color:#777;
-
-    max-width:680px;
+    max-width:650px;
 
     margin:
     0 auto 30px;
 
+    color:#85817a;
+
     line-height:2;
+
+    direction:ltr;
 }
 
-/* =====================================================
+
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer{
 
     padding:
-    75px 20px;
+    70px 20px;
 
     text-align:center;
 
     border-top:
-    1px solid #181818;
+    1px solid
+    rgba(255,255,255,.06);
 
     color:#666;
 }
 
+
 .footer-logo{
+
+    direction:rtl;
+
+    font-family:
+    "Amiri",
+    serif;
+
+    font-size:38px;
+
+    color:var(--gold);
+
+    margin-bottom:12px;
+}
+
+
+footer p{
 
     direction:ltr;
 
-    color:#d4af37;
+    font-size:11px;
 
-    font-size:25px;
-
-    letter-spacing:6px;
-
-    margin-bottom:15px;
-}
-
-footer p{
     line-height:2;
 }
 
-/* =====================================================
+
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
-@media(max-width:750px){
+@media(max-width:800px){
 
-    nav{
+    .nav{
 
         width:94%;
 
-        min-height:62px;
+        height:62px;
 
         padding:
-        8px 17px;
+        0 17px;
     }
 
+
     .nav-links{
+
         display:none;
     }
 
-    .brand-logo{
-        transform:scale(.88);
+
+    .nav-logo{
+
+        font-size:28px;
     }
+
 
     .hero{
 
-        min-height:100vh;
-
-        padding-top:135px;
+        padding-top:130px;
     }
 
-    .hero-ring{
 
-        width:370px;
-        height:370px;
+    .orbit{
+
+        width:430px;
+        height:430px;
     }
 
-    .hero h1{
+
+    .logo-stage{
+
+        transform:scale(.82);
+    }
+
+
+    .hero-title{
 
         font-size:
-        clamp(48px,16vw,80px);
-
-        letter-spacing:5px;
+        clamp(42px,13vw,75px);
     }
 
-    .hero p{
+
+    .hero-subtitle{
+
+        font-size:21px;
+    }
+
+
+    .hero-text{
+
         font-size:13px;
     }
 
-    .quick-actions{
-        margin-top:-35px;
-    }
 
-    .quick-grid{
-
-        grid-template-columns:1fr;
-
-        gap:10px;
-    }
-
-    .quality-grid{
+    .collection-grid{
 
         grid-template-columns:1fr;
     }
 
-    .quality-card{
-
-        min-height:auto;
-
-        padding:30px;
-    }
 
     .story{
 
         grid-template-columns:1fr;
 
-        gap:35px;
+        gap:40px;
     }
 
-    .story-box{
+
+    .story-content .section-kicker{
+
+        text-align:center;
+    }
+
+
+    .story-visual{
+
         min-height:330px;
     }
 
-    .personal,
-    .limited{
 
-        margin-left:5%;
-        margin-right:5%;
+    .chat-dock{
 
-        padding:
-        60px 25px;
+        right:15px;
+        bottom:15px;
+    }
+
+
+    .chat-button{
+
+        width:48px;
+        height:48px;
     }
 
 }
 
-/* =====================================================
+
+/* =========================================================
    REDUCED MOTION
-===================================================== */
+========================================================= */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1324,46 +1786,56 @@ footer p{
 
 
 <!-- =====================================================
-     NAVIGATION
+     CINEMATIC OPENING
 ===================================================== -->
 
-<nav>
+<div id="intro">
 
-<a href="index.html"
-   style="text-decoration:none;">
+    <div class="intro-light"></div>
 
-<div class="brand-logo">
+    <div class="logo-stage">
 
-    <!-- STATIC CROWN -->
+        <div class="logo-ring"></div>
 
-    <div class="crown">
-        ♛
-    </div>
+        <!-- STATIC CROWN -->
 
-    <!-- ANIMATED DOUBLE EDGE SWORD -->
+        <div class="crown">
+            ♛
+        </div>
 
-    <div class="sword-logo">
+        <!-- ANIMATED DOUBLE-EDGED SWORD -->
 
-        <span class="sword-line"></span>
+        <div class="sword"></div>
 
-        <span class="sword-handle"></span>
+        <!-- URDU CALLIGRAPHY: RAJA -->
 
-    </div>
+        <div class="calligraphy">
+            راجا
+        </div>
 
-    <!-- ONLY RAJA -->
-
-    <div class="raja-text">
-        RAJA
     </div>
 
 </div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="nav">
+
+
+<a href="index.html"
+   class="nav-logo">
+
+راجا
 
 </a>
 
 
 <div class="nav-links">
 
-<a href="index.html">
+<a href="#home">
 HOME
 </a>
 
@@ -1375,7 +1847,32 @@ COLLECTION
 AUTHENTICITY
 </a>
 
+<a href="#story">
+OUR STORY
+</a>
+
 </div>
+
+
+<select
+    class="language"
+    id="languageSelect"
+    onchange="changeLanguage()">
+
+    <option value="en">
+        EN
+    </option>
+
+    <option value="ur">
+        اردو
+    </option>
+
+    <option value="ar">
+        العربية
+    </option>
+
+</select>
+
 
 </nav>
 
@@ -1384,40 +1881,45 @@ AUTHENTICITY
      HERO
 ===================================================== -->
 
-<section class="hero">
+<section class="hero"
+         id="home">
 
-<div class="hero-ring"></div>
+
+<div class="orbit"></div>
 
 
 <div class="hero-content">
 
 
-<div class="eyebrow">
-RAJAFIDA • PAKISTANI HERITAGE
+<div class="kicker">
+THE HOUSE OF RAJA
 </div>
 
 
-<h1>
-RAJAFIDA
+<h1 class="hero-title">
+RAJA
 </h1>
 
 
-<h2>
-روایتِ ورثے کی، اندازِ بادشاہی
+<h2 class="hero-subtitle"
+    id="heroSubtitle">
+
+Heritage. Craft. Identity.
 </h2>
 
 
-<p>
+<p class="hero-text"
+   id="heroText">
 
-راجافدا پاکستانی ثقافت، روایتی دستکاری اور
-جدید نفاست کو ایک منفرد انداز میں پیش کرنے والی
-ذاتی برانڈ ہے، جہاں ہر انتخاب معیار، شناخت
-اور خوبصورتی کو اہمیت دیتا ہے۔
+A personal luxury brand inspired by Pakistani heritage,
+crafted with character, and created for those who value
+authenticity, individuality and timeless style.
 
 </p>
 
 
-<div class="buttons">
+<div class="hero-buttons">
+
 
 <a href="collection.html"
    class="btn btn-gold">
@@ -1427,204 +1929,10 @@ EXPLORE COLLECTION
 </a>
 
 
-<a href="#story"
-   class="btn btn-outline">
+<a href="#assistant"
+   class="btn btn-dark">
 
-OUR STORY
-
-</a>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     QUICK ACTIONS
-===================================================== -->
-
-<section class="quick-actions">
-
-<div class="quick-grid">
-
-
-<!-- DIRECT CHAT -->
-
-<a href="#contact"
-   class="quick-card">
-
-<div class="quick-icon">
-◈
-</div>
-
-<div class="quick-title">
-CHAT WITH RAJAFIDA
-</div>
-
-<div class="quick-text">
-
-براہِ راست رابطے کے لیے پیغام بھیجیں
-
-</div>
-
-</a>
-
-
-<!-- AI -->
-
-<a href="#ai-assistant"
-   class="quick-card">
-
-<div class="quick-icon">
-✦
-</div>
-
-<div class="quick-title">
-ASK RAJAFIDA AI
-</div>
-
-<div class="quick-text">
-
-مصنوعات اور معیار کے بارے میں سوال پوچھیں
-
-</div>
-
-</a>
-
-
-<!-- VERIFY -->
-
-<a href="verify.html"
-   class="quick-card">
-
-<div class="quick-icon">
-✓
-</div>
-
-<div class="quick-title">
-VERIFY AUTHENTICITY
-</div>
-
-<div class="quick-text">
-
-اپنی خصوصی مصنوعات کی شناخت چیک کریں
-
-</div>
-
-</a>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     QUALITY
-===================================================== -->
-
-<section class="section">
-
-
-<div class="section-label">
-OUR COLLECTION
-</div>
-
-
-<h2 class="section-title">
-دو معیار، ایک شناخت
-</h2>
-
-
-<p class="section-description">
-
-راجافدا میں مصنوعات دو معیار میں پیش کی جاتی ہیں۔
-معیاری مجموعہ خوبصورتی، اچھے مواد اور مناسب قیمت
-پر توجہ دیتا ہے، جبکہ خصوصی مجموعہ محدود تعداد،
-منتخب مواد اور اعلیٰ کاریگری کی نمائندگی کرتا ہے۔
-
-</p>
-
-
-<div class="quality-grid">
-
-
-<!-- STANDARD -->
-
-<div class="quality-card standard-card">
-
-
-<div class="card-number">
-01 / STANDARD
-</div>
-
-
-<h3 class="card-title">
-STANDARD
-</h3>
-
-
-<div class="card-urdu">
-معیاری مجموعہ
-</div>
-
-
-<p class="card-text">
-
-اچھا مواد، خوبصورت تکمیل، منفرد ڈیزائن
-اور مناسب قیمت۔ ایسا انتخاب جو روزمرہ استعمال
-میں خوبصورتی اور معیار کو یکجا کرتا ہے۔
-
-</p>
-
-
-<a href="collection.html"
-   class="card-link">
-
-VIEW STANDARD
-
-</a>
-
-
-</div>
-
-
-<!-- PREMIUM -->
-
-<div class="quality-card premium-card">
-
-
-<div class="card-number">
-02 / PREMIUM
-</div>
-
-
-<h3 class="card-title">
-PREMIUM
-</h3>
-
-
-<div class="card-urdu">
-محدود خصوصی مجموعہ
-</div>
-
-
-<p class="card-text">
-
-منتخب اعلیٰ معیار کا مواد، ماہر کاریگروں کی
-دستکاری، اعلیٰ درجے کی نفیس تکمیل، محدود تعداد
-اور ہر شے کے لیے منفرد شناختی نمبر۔
-
-</p>
-
-
-<a href="collection.html"
-   class="card-link">
-
-DISCOVER PREMIUM
+ASK RAJA AI
 
 </a>
 
@@ -1641,49 +1949,47 @@ DISCOVER PREMIUM
      PERSONAL BRAND
 ===================================================== -->
 
-<section class="personal"
-         id="contact">
+<section class="personal">
 
 
-<div class="section-label">
-PERSONAL BRAND
+<div class="section-kicker">
+THE PERSONAL TOUCH
 </div>
 
 
 <h2>
-یہ صرف دکان نہیں، <span>RajaFida</span> ہے
+
+More Than A Store.
+<span>A Signature.</span>
+
 </h2>
 
 
-<p>
+<p id="personalText">
 
-یہ ایک ذاتی برانڈ ہے جہاں گاہک صرف ایک مصنوعات
-نہیں خریدتا بلکہ براہِ راست برانڈ سے رابطہ بھی
-کر سکتا ہے۔ کسی سوال، انتخاب یا خصوصی درخواست
-کے لیے آپ ہم سے براہِ راست بات کر سکتے ہیں۔
+RAJA is a personal brand built around heritage,
+craftsmanship and individuality. Every piece is
+selected with purpose, while customers can connect
+directly with the brand for guidance and assistance.
 
 </p>
 
 
-<div class="buttons">
+<div class="hero-buttons">
 
 
-<!--
-    بعد میں یہاں اپنا اصل رابطہ شامل کریں
--->
-
-<a href="#"
+<a href="#contact"
    class="btn btn-gold">
 
-CHAT DIRECTLY
+CHAT WITH RAJA
 
 </a>
 
 
-<a href="#ai-assistant"
-   class="btn btn-outline">
+<a href="#assistant"
+   class="btn btn-dark">
 
-ASK RAJAFIDA AI
+RAJA AI ASSISTANT
 
 </a>
 
@@ -1694,114 +2000,101 @@ ASK RAJAFIDA AI
 
 
 <!-- =====================================================
-     AI ASSISTANT
+     COLLECTION
 ===================================================== -->
 
-<section class="section"
-         id="ai-assistant">
+<section class="section">
 
 
-<div class="section-label">
-RAJAFIDA INTELLIGENT ASSISTANT
+<div class="section-kicker">
+THE COLLECTION
 </div>
 
 
 <h2 class="section-title">
-Ask RajaFida AI
+Two Levels. One Identity.
 </h2>
 
 
-<p class="section-description">
+<p class="section-text">
 
-آپ کا ذاتی معاون جو راجافدا کی مصنوعات،
-معیار، Standard اور Premium مجموعے،
-دستیابی اور Authenticity کے بارے میں
-آپ کے سوالات کا جواب دے سکے گا۔
+Two carefully defined collections designed for
+different preferences, while maintaining the same
+RAJA standard of character and presentation.
 
 </p>
 
 
-<div class="auth-box">
+<div class="collection-grid">
 
 
-<h2>
-✦ RajaFida AI
-</h2>
+<!-- STANDARD -->
+
+<div class="collection-card standard">
+
+
+<div class="collection-number">
+01 / STANDARD
+</div>
+
+
+<h3>
+STANDARD
+</h3>
 
 
 <p>
 
-سلام! میں راجافدا کا معاون ہوں۔
-آپ مجھ سے ہماری مصنوعات، معیار یا
-خصوصی مجموعے کے بارے میں سوال پوچھ سکتے ہیں۔
+Good materials, beautiful finishing, unique designs
+and an accessible price point for everyday elegance.
 
 </p>
 
 
-<!--
-=================================================
-AI CHAT BUTTON
+<a href="collection.html"
+   class="btn btn-dark">
 
-بعد میں اصل AI Chat یہاں connect ہوگا۔
-=================================================
--->
-
-<a href="#"
-   class="btn btn-gold">
-
-START AI CHAT
+VIEW STANDARD
 
 </a>
 
 
 </div>
 
-</section>
+
+<!-- PREMIUM -->
+
+<div class="collection-card premium">
 
 
-<!-- =====================================================
-     LIMITED PREMIUM
-===================================================== -->
-
-<section class="limited">
-
-
-<div class="section-label">
-RAJAFIDA PRIVATE COLLECTION
+<div class="collection-number">
+02 / PREMIUM
 </div>
 
 
-<h2>
-LIMITED EDITION
-</h2>
+<h3>
+PREMIUM
+</h3>
 
 
 <p>
 
-یہ مجموعہ محدود تعداد میں تیار کیا جاتا ہے۔
-ہر خصوصی شے اپنی منفرد شناخت رکھتی ہے اور
-اس کی authenticity راجافدا کے ذریعے چیک کی جا سکتی ہے۔
+Selected materials, skilled craftsmanship,
+high-end finishing, limited production and
+a unique identification number for every piece.
 
 </p>
-
-
-<div class="buttons">
 
 
 <a href="collection.html"
    class="btn btn-gold">
 
-DISCOVER LIMITED
+DISCOVER PREMIUM
 
 </a>
 
 
-<a href="verify.html"
-   class="btn btn-outline">
-
-VERIFY AUTHENTICITY
-
-</a>
+</div>
 
 
 </div>
@@ -1810,7 +2103,7 @@ VERIFY AUTHENTICITY
 
 
 <!-- =====================================================
-     STORY
+     OUR STORY
 ===================================================== -->
 
 <section class="section"
@@ -1820,11 +2113,14 @@ VERIFY AUTHENTICITY
 <div class="story">
 
 
-<div class="story-box">
+<div class="story-visual">
 
 
-<div class="story-circle">
-RAJAFIDA
+<div class="story-orbit"></div>
+
+
+<div class="story-logo">
+راجا
 </div>
 
 
@@ -1834,41 +2130,37 @@ RAJAFIDA
 <div class="story-content">
 
 
-<div class="section-label"
-     style="text-align:right;">
-
+<div class="section-kicker">
 OUR STORY
-
 </div>
 
 
 <h2>
-ہماری کہانی
+Built With Meaning.
 </h2>
 
 
 <p>
 
-راجافدا کا مقصد پاکستانی ورثے، روایتی
-کاریگری اور جدید نفاست کو ایک ایسے انداز میں
-پیش کرنا ہے جو اپنی اصل شناخت برقرار رکھے۔
+RAJA represents a connection between Pakistani
+heritage and modern luxury.
 
 </p>
 
 
 <p>
 
-ہمارے لیے ہر خوبصورت شے کے پیچھے ایک کہانی،
-محنت، وقت اور ہنر موجود ہوتا ہے۔ اسی سوچ کے ساتھ
-ہم اپنے انتخاب کو عام مصنوعات سے مختلف بنانا چاہتے ہیں۔
+The idea is simple: create pieces that have
+character, carry a story and feel personal to
+the person who owns them.
 
 </p>
 
 
 <a href="collection.html"
-   class="btn btn-outline">
+   class="btn btn-dark">
 
-EXPLORE OUR WORLD
+DISCOVER THE WORLD OF RAJA
 
 </a>
 
@@ -1888,24 +2180,29 @@ EXPLORE OUR WORLD
 <section class="section">
 
 
-<div class="auth-box">
+<div class="assistant">
 
 
-<div class="section-label">
+<div class="assistant-icon">
+✓
+</div>
+
+
+<div class="section-kicker">
 AUTHENTICITY
 </div>
 
 
 <h2>
-اپنی مصنوعات کی شناخت چیک کریں
+Own Something Genuine.
 </h2>
 
 
 <p>
 
-Premium مجموعے کی ہر خصوصی شے کے لیے منفرد
-شناختی نمبر رکھا جائے گا۔ اس نمبر کے ذریعے
-اس کی اصلیت کی تصدیق کی جا سکے گی۔
+Premium pieces can carry a unique identification
+number, allowing their authenticity to be checked
+through the official RAJA verification system.
 
 </p>
 
@@ -1913,7 +2210,110 @@ Premium مجموعے کی ہر خصوصی شے کے لیے منفرد
 <a href="verify.html"
    class="btn btn-gold">
 
-VERIFY NOW
+VERIFY A PIECE
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AI ASSISTANT
+===================================================== -->
+
+<section class="section"
+         id="assistant">
+
+
+<div class="assistant">
+
+
+<div class="assistant-icon">
+✦
+</div>
+
+
+<div class="section-kicker">
+INTELLIGENT ASSISTANCE
+</div>
+
+
+<h2>
+RAJA AI Assistant
+</h2>
+
+
+<p id="aiText">
+
+Ask about products, Standard and Premium collections,
+availability, authenticity or anything else about RAJA.
+
+</p>
+
+
+<!--
+=========================================================
+THIS BUTTON WILL BE CONNECTED TO THE REAL AI ASSISTANT
+IN THE NEXT DEVELOPMENT STEP.
+=========================================================
+-->
+
+<a href="#"
+   class="btn btn-gold">
+
+START AI CHAT
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DIRECT CONTACT
+===================================================== -->
+
+<section class="section"
+         id="contact">
+
+
+<div class="assistant">
+
+
+<div class="section-kicker">
+DIRECT CONNECTION
+</div>
+
+
+<h2>
+Talk Directly With RAJA.
+</h2>
+
+
+<p>
+
+Have a question, need help choosing a product,
+or want to discuss a special request?
+Connect directly with the brand.
+
+</p>
+
+
+<!--
+=========================================================
+YOUR REAL CHAT / WHATSAPP LINK WILL BE INSERTED HERE.
+=========================================================
+-->
+
+<a href="#"
+   class="btn btn-gold">
+
+CHAT WITH RAJA
 
 </a>
 
@@ -1930,40 +2330,42 @@ VERIFY NOW
 <section class="final">
 
 
-<div class="section-label">
-WELCOME TO RAJAFIDA
+<div class="section-kicker">
+WELCOME TO RAJA
 </div>
 
 
 <h2>
-Wear Your <span>Heritage</span>
+
+Wear Your
+<span>Heritage.</span>
+
 </h2>
 
 
 <p>
 
-اپنی پسند منتخب کریں، اپنی شناخت بنائیں،
-اور راجافدا کے ساتھ پاکستانی ورثے کو
-ایک نئے انداز میں اپنائیں۔
+Discover pieces with character, craftsmanship
+and a story worth carrying.
 
 </p>
 
 
-<div class="buttons">
+<div class="hero-buttons">
 
 
 <a href="collection.html"
    class="btn btn-gold">
 
-SHOP COLLECTION
+EXPLORE COLLECTION
 
 </a>
 
 
-<a href="#contact"
-   class="btn btn-outline">
+<a href="verify.html"
+   class="btn btn-dark">
 
-TALK TO RAJAFIDA
+AUTHENTICITY
 
 </a>
 
@@ -1974,6 +2376,34 @@ TALK TO RAJAFIDA
 
 
 <!-- =====================================================
+     FLOATING CHAT BUTTONS
+===================================================== -->
+
+<div class="chat-dock">
+
+
+<a href="#assistant"
+   class="chat-button"
+   title="RAJA AI">
+
+✦
+
+</a>
+
+
+<a href="#contact"
+   class="chat-button"
+   title="Chat With RAJA">
+
+◈
+
+</a>
+
+
+</div>
+
+
+<!-- =====================================================
      FOOTER
 ===================================================== -->
 
@@ -1981,12 +2411,12 @@ TALK TO RAJAFIDA
 
 
 <div class="footer-logo">
-RAJAFIDA
+راجا
 </div>
 
 
 <p>
-پاکستانی ورثہ • جدید نفاست • منفرد شناخت
+RAJA • Heritage • Craft • Identity
 </p>
 
 
@@ -1994,11 +2424,125 @@ RAJAFIDA
 
 
 <p>
-© 2026 RajaFida • All Rights Reserved
+© 2026 RAJA. All Rights Reserved.
 </p>
 
 
 </footer>
+
+
+<!-- =====================================================
+     LANGUAGE SCRIPT
+===================================================== -->
+
+<script>
+
+function changeLanguage(){
+
+    const language =
+    document.getElementById(
+        "languageSelect"
+    ).value;
+
+
+    const heroSubtitle =
+    document.getElementById(
+        "heroSubtitle"
+    );
+
+    const heroText =
+    document.getElementById(
+        "heroText"
+    );
+
+    const personalText =
+    document.getElementById(
+        "personalText"
+    );
+
+    const aiText =
+    document.getElementById(
+        "aiText"
+    );
+
+
+    if(language === "ur"){
+
+        document.documentElement.lang = "ur";
+
+        document.documentElement.dir = "rtl";
+
+
+        heroSubtitle.innerText =
+        "ورثہ، ہنر اور شناخت";
+
+
+        heroText.innerText =
+        "پاکستانی ورثے سے متاثر ایک ذاتی اعلیٰ معیار کا برانڈ، جہاں ہر انتخاب اپنی شناخت، کردار اور اصلیت رکھتا ہے۔";
+
+
+        personalText.innerText =
+        "راجا ایک ذاتی برانڈ ہے جو ورثے، دستکاری اور انفرادیت کو اہمیت دیتا ہے۔ ہر شے سوچ سمجھ کر منتخب کی جاتی ہے اور گاہک براہِ راست برانڈ سے رابطہ کر سکتے ہیں۔";
+
+
+        aiText.innerText =
+        "مصنوعات، معیار، دستیابی، اصلیت یا راجا کے بارے میں کوئی بھی سوال پوچھیں۔";
+
+    }
+
+
+    else if(language === "ar"){
+
+        document.documentElement.lang = "ar";
+
+        document.documentElement.dir = "rtl";
+
+
+        heroSubtitle.innerText =
+        "التراث، الحرفية والهوية";
+
+
+        heroText.innerText =
+        "علامة شخصية فاخرة مستوحاة من التراث الباكستاني، حيث تحمل كل قطعة طابعاً خاصاً وأصالة وهوية مميزة.";
+
+
+        personalText.innerText =
+        "راجا علامة شخصية تهتم بالتراث والحرفية والتميز. يتم اختيار كل قطعة بعناية، ويمكن للعملاء التواصل مباشرة مع العلامة.";
+
+
+        aiText.innerText =
+        "اسأل عن المنتجات أو المجموعات أو التوفر أو الأصالة أو أي شيء يتعلق بعلامة راجا.";
+
+    }
+
+
+    else{
+
+        document.documentElement.lang = "en";
+
+        document.documentElement.dir = "ltr";
+
+
+        heroSubtitle.innerText =
+        "Heritage. Craft. Identity.";
+
+
+        heroText.innerText =
+        "A personal luxury brand inspired by Pakistani heritage, crafted with character, and created for those who value authenticity, individuality and timeless style.";
+
+
+        personalText.innerText =
+        "RAJA is a personal brand built around heritage, craftsmanship and individuality. Every piece is selected with purpose, while customers can connect directly with the brand for guidance and assistance.";
+
+
+        aiText.innerText =
+        "Ask about products, Standard and Premium collections, availability, authenticity or anything else about RAJA.";
+
+    }
+
+}
+
+</script>
 
 
 </body>
